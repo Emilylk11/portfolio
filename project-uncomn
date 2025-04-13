@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="UNCOMN Website Redesign Case Study" />
+  <title>UNCOMN Website Redesign | Emily Kuntze</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero-content">
+      <h1>UNCOMN Website Redesign</h1>
+      <p>Lead Designer & Analyst | Q1 2025</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="case-study">
+      <div class="container">
+        <h2>Overview</h2>
+        <p>I led the redesign, launch, and optimization of UNCOMN’s corporate website, aligning the experience with user behavior, modern UI trends, and measurable KPIs.</p>
+
+        <h2>Problem</h2>
+        <p>The existing site had outdated design, poor mobile usability, high bounce rates, and low engagement with contact forms. It didn’t reflect the innovative nature of the brand.</p>
+
+        <h2>Strategy</h2>
+        <ul>
+          <li>Conducted UX audits using Hotjar and GA4</li>
+          <li>Developed Figma wireframes and prototypes for user testing</li>
+          <li>Rebuilt layout using Elementor Pro on WordPress with performance optimizations</li>
+          <li>Integrated GA4, GTM, and consent-mode compliant cookie banner</li>
+        </ul>
+
+        <h2>Process</h2>
+        <p>I worked collaboratively with SMEs and stakeholders, holding weekly design feedback sessions. The launch included A/B testing on key landing pages and real-time performance monitoring.</p>
+
+        <h2>Results</h2>
+        <ul>
+          <li>+42.3% increase in organic traffic</li>
+          <li>-22.1% decrease in bounce rate</li>
+          <li>+17.4% increase in contact form conversions</li>
+          <li>84.3% internal CTR on new team bio pages</li>
+        </ul>
+
+        <h2>Tools Used</h2>
+        <p>Figma, WordPress (Elementor), GA4, Looker Studio, Hotjar, Mailchimp, ACF, GTM</p>
+
+        <div class="case-links">
+          <a href="index.html#work">← Back to Portfolio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Emily Kuntze</p>
+  </footer>
+</body>
+</html>
