@@ -1,4 +1,6 @@
-/* styles.css for Emily Kuntze Portfolio */
+/* styles.css for Emily Kuntze Portfolio — Inspired by Evan Cheng */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
 /* Reset & Basics */
 * {
@@ -8,151 +10,177 @@
 }
 
 body {
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   line-height: 1.6;
-  background: #f8f9fa;
-  color: #333;
+  background: #ffffff;
+  color: #111111;
   padding-bottom: 3rem;
+  scroll-behavior: smooth;
+  text-transform: uppercase;
 }
 
 a {
   color: #0077cc;
   text-decoration: none;
+  transition: all 0.2s ease-in-out;
 }
 a:hover {
   text-decoration: underline;
+  color: #005fa3;
 }
 
 /* Navbar */
 .navbar {
-  background: #ffffff;
-  padding: 1rem 2rem;
+  background: transparent;
+  padding: 1.5rem 2rem;
   display: flex;
   justify-content: center;
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid #eaeaea;
+  backdrop-filter: blur(10px);
 }
 .navbar ul {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
+  font-weight: 500;
 }
 
 /* Hero Section */
 .hero {
-  background: #fff;
-  padding: 6rem 2rem;
+  padding: 8rem 2rem 6rem;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #f8f8f8;
 }
 .hero h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   margin-bottom: 1rem;
+  font-weight: 700;
 }
 .hero p {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
+  color: #555;
 }
 .skills {
-  font-style: italic;
+  font-size: 1rem;
+  letter-spacing: 1px;
   color: #777;
   margin-bottom: 2rem;
 }
 .cta-button {
-  padding: 0.75rem 1.5rem;
-  background-color: #0077cc;
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 2rem;
+  background-color: #111;
   color: #fff;
-  border-radius: 4px;
-  transition: background-color 0.3s;
+  border-radius: 100px;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.2s;
+  text-transform: uppercase;
 }
 .cta-button:hover {
-  background-color: #005fa3;
+  background-color: #333;
+  transform: scale(1.05);
 }
 
 /* Work Section */
 .work {
-  padding: 4rem 2rem;
-  background-color: #f1f1f1;
+  padding: 5rem 2rem;
+  background-color: #ffffff;
 }
 .work h2 {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
+  font-size: 2.25rem;
+  font-weight: 600;
 }
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
 }
 .project-card {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  transition: transform 0.3s;
+  background: #f4f4f4;
+  padding: 2rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+  transition: transform 0.3s ease;
 }
 .project-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
 }
 .project-card img {
   width: 100%;
-  border-radius: 4px;
-  margin-bottom: 1rem;
+  border-radius: 12px;
+  margin-bottom: 1.25rem;
 }
 .project-card h3 {
   margin-bottom: 0.5rem;
+  font-size: 1.25rem;
 }
 
 /* About Section */
 .about {
-  padding: 4rem 2rem;
-  background-color: #ffffff;
+  padding: 5rem 2rem;
+  background-color: #f8f8f8;
   text-align: center;
 }
 .about h2 {
-  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  margin-bottom: 1.25rem;
+  font-weight: 600;
 }
 .about p {
   max-width: 700px;
   margin: 0 auto;
+  font-size: 1.1rem;
+  color: #444;
 }
 
 /* Contact Section */
 .contact {
-  padding: 4rem 2rem;
-  background-color: #f1f1f1;
+  padding: 5rem 2rem;
+  background-color: #ffffff;
   text-align: center;
 }
 .contact h2 {
   margin-bottom: 2rem;
+  font-size: 2rem;
 }
 .contact form {
   max-width: 500px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.25rem;
 }
-.contact input, .contact textarea {
-  padding: 0.75rem;
+.contact input,
+.contact textarea {
+  padding: 1rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 12px;
   width: 100%;
+  font-size: 1rem;
 }
 .contact button {
   padding: 0.75rem;
-  background-color: #0077cc;
+  background-color: #111;
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 100px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.2s;
+  text-transform: uppercase;
 }
 .contact button:hover {
-  background-color: #005fa3;
+  background-color: #333;
+  transform: scale(1.05);
 }
 
 /* Footer */
@@ -167,4 +195,17 @@ footer {
   margin: 0 1rem;
   color: #0077cc;
   font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Images in case studies */
+.case-image {
+  width: 100%;
+  margin: 2rem 0;
+  border-radius: 12px;
+}
+.case-image.half-width {
+  width: 48%;
+  display: inline-block;
+  margin-right: 2%;
 }
