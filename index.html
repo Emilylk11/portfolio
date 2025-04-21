@@ -16,9 +16,23 @@
   <title>Emily Kuntze | Portfolio</title>
   <link rel="stylesheet" href="css/styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
+  <!-- Hamburger Icon -->
+<div class="hamburger" onclick="toggleMenu()">
+  <i class="fas fa-bars"></i>
+</div>
+
+<!-- Off-Canvas Mobile Menu -->
+<nav id="mobileMenu" class="off-canvas-menu">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects</a>
+  <a href="contact.html">Contact</a>
+</nav>
+  
   <header class="hero">
     <!-- Background video -->
     <video autoplay muted loop playsinline class="bg-video">
@@ -82,5 +96,24 @@
       }
     });
   </script>
+
+  <script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('open');
+  }
+
+  // Close menu when any link is clicked
+  document.addEventListener('DOMContentLoaded', function () {
+    const links = document.querySelectorAll('#mobileMenu a');
+    const menu = document.getElementById('mobileMenu');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('open');
+      });
+    });
+  });
+</script>
+  
 </body>
 </html>
