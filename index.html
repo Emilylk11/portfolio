@@ -33,10 +33,11 @@
           <a href="#" class="logo">Emily Kuntze</a>
         </div>
 
+
         <div class="nav-center">
           <a href="projects.html">Projects</a>
           <a href="about.html">About</a>
-          <a href="#contact">Contact</a>
+          <a href="contact.html">Contact</a>
         </div>
 
       <div class="nav-right">
@@ -50,7 +51,12 @@
           <i class="fab fa-behance"></i>
         </a>
       </div>
-    </nav>
+      </div>
+            <!-- Mobile menu icon -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+ </nav>
 
     <!-- Hero Text -->
     <div class="hero-content">
@@ -61,35 +67,8 @@
         <a class="cta-button" href="projects.html">Enter My Paradise</a>
       </div>
     </div>
-
-    <header class="navbar video-navbar">
-  <video autoplay muted loop playsinline class="nav-video">
-    <source src="assets/hero-video.mp4" type="video/mp4" />
-  </video>
-
-  <div class="nav-content">
-    <div class="nav-left">
-      <a href="index.html" class="logo">Emily Kuntze</a>
-    </div>
-
-    <nav class="nav-center">
-      <a href="projects.html">Projects</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-
-    <div class="nav-right">
-      <a href="https://linkedin.com/in/emilykuntze" target="_blank" aria-label="LinkedIn">LinkedIn</a>
-      <a href="mailto:kuntzeemily@gmail.com" aria-label="Email">Email</a>
-      <a href="https://behance.net/emilykuntze" target="_blank" aria-label="Behance">Behance</a>
-    </div>
-  </div>
-
-  <!-- Mobile menu icon -->
-  <div class="hamburger" onclick="toggleMenu()">
-    <i class="fas fa-bars"></i>
-  </div>
-
+  </header>
+    
   <!-- Mobile menu links -->
   <div id="mobileMenu" class="off-canvas-menu">
     <a href="index.html">Home</a>
@@ -97,7 +76,6 @@
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
   </div>
-</header>
 
   <footer>
     <p>&copy; 2025 Emily Kuntze</p>
@@ -141,6 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
+
   
 </body>
 </html>
