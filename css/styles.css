@@ -258,7 +258,7 @@ body.project-gallery-page {
 }
 
 .hero-image {
-  width: 700px;
+  width: auto;
   max-height: 300px;
   padding: 3rem;
   object-fit: contain;
