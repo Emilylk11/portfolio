@@ -1008,3 +1008,20 @@ footer {
     color: #111;
   }
 }
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  background: transparent;
+  font-size: 0.85rem;
+}
