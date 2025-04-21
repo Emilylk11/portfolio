@@ -952,3 +952,59 @@ footer {
   }
 }
 
+/* Desktop only */
+.nav-content,
+.navbar .nav-center,
+.navbar .nav-right {
+  display: flex;
+}
+
+.hamburger,
+.off-canvas-menu {
+  display: none;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .nav-content {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+  }
+
+  .off-canvas-menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100vh;
+    background-color: white;
+    padding: 4rem 2rem;
+    transition: right 0.3s ease-in-out;
+    z-index: 999;
+  }
+
+  .off-canvas-menu.open {
+    right: 0;
+  }
+
+  .off-canvas-menu a {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #111;
+  }
+}
