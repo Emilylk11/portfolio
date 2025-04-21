@@ -1,0 +1,667 @@
+/* About Page Custom Styles for Emily Kuntze */
+/* styles.css — Updated with Transparent Navbar */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(135deg, #ffe0cb, #e0c8ff, #b4f4f4);
+  margin: 0;
+  padding: 0;
+  color: #111111;
+  text-transform: uppercase;
+  scroll-behavior: smooth;
+
+/* Navbar Styles - Cleaned */
+.navbar.video-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+  background: transparent;
+}
+
+.nav-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 2rem;
+  height: 100%;
+}
+
+.nav-left .logo {
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.nav-center a,
+.nav-right a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0 1rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-center a:hover,
+.nav-right a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.video-navbar nav a {
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* About Page Custom Styles for Emily Laine */
+
+body.about-page {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #111;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+main.about {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hero Section */
+.about-hero {
+  padding: 1rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+}
+
+.container {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  padding-top: 11rem;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3rem;
+}
+
+.about-text {
+  max-width: 600px;
+  text-transform: none;
+}
+
+.about-text h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #111;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: none;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  background-color: #333;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.btn.secondary {
+  background-color: transparent;
+  border: 2px solid #111;
+  color: #111;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.btn.secondary:hover {
+  background-color: #111;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-image img {
+  max-width: 400px;
+  border-radius: 2rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .about-hero .container,
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image img {
+    margin-top: 2rem;
+  }
+}
+
+/* Experience & Skills Section */
+.experience-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem; /* you can reduce this to 1rem if needed */
+  align-items: flex-start; /* aligns the top edges */
+}
+
+.experience {
+  flex: 2;
+  min-width: 280px;
+}
+
+.timeline-item {
+  border-left: 2px solid #000;
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.timeline-item h4 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #000;
+  margin: 0;
+}
+
+.timeline-item h3 {
+  font-size: 1.2rem;
+  margin: 0.2rem 0;
+  font-weight: 600;
+}
+
+.timeline-item p {
+  color: #000;
+  font-size: 0.95rem;
+  padding-right: 2rem;
+}
+
+/* Skills Section */
+.skills-section {
+  text-align: center;
+  padding: 4rem 3rem;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.skills-section h4 {
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: #1a1a1a;
+}
+
+/* Filter Buttons */
+.skill-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.skill-filters button {
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  background-color: transparent;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  color: #000;
+  border: 2px solid #111;
+  font-size: 0.8rem;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+
+.skill-filters button:hover,
+.skill-filters button.active {
+  background-color: #111;
+  color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 1rem;
+  justify-items: center; 
+}
+
+.skills-grid i {
+  width: 65px;
+  height: 65px;
+  background-color: #1e1e1e;
+  color: #fff;
+  font-size: 2.2rem;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+.skill-grid i:hover {
+  transform: scale(1.08);
+}
+
+
+.skill-icon {
+  width: 65px;
+  height: 65px;
+  background-color: #1e1e1e;
+  color: #fff;
+  font-size: 2.2rem;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+  cursor: default;
+}
+
+.skill-icon:hover {
+  transform: scale(1.08);
+}
+
+.skill-icon[data-category] {
+  display: none; /* hide all by default for filtering */
+}
+
+.skill-icon.show {
+  display: flex;
+}
+
+.skill-icon img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* match devicon white */
+  transition: transform 0.3s ease;
+}
+
+.skill-icon:hover img {
+  transform: scale(1.1);
+}
+
+/* Design Philosophy */
+.experience-philosophy {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.experience {
+  flex: 2;
+  min-width: 600px;
+}
+
+.philosophy {
+  flex: 1;
+  min-width: 420px;
+  padding: 2rem;
+  background-color: #1a1a1a;
+  color: #eee;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.philosophy h4 {
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+  color: #888;
+  margin-bottom: 2rem;
+}
+
+.philosophy .quote {
+  font-size: 1.4rem;
+  line-height: 1.4;
+  font-weight: 500;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .experience-philosophy {
+    flex-direction: column;
+  }
+
+  .philosophy {
+    padding: 2rem 1rem;
+  }
+}
+
+/* Fun Facts Section */
+.fun-facts {
+  padding: 4rem 2rem;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.fun-facts h4 {
+  font-size: 1.5rem;
+  color: #000;
+  letter-spacing: 0.1em;
+  margin-bottom: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Grid layout fix */
+.fun-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: stretch;
+}
+
+.fun-facts {
+  padding: 3rem 2rem 3rem;
+  text-align: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.fun-facts h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+  letter-spacing: 0.1em;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+}
+
+.fun-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  justify-items: center;
+  align-items: stretch;
+}
+
+.fact-card {
+  background-color: #1e1e1e;
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  color: #ddd;
+  width: 100%;
+  max-width: 220px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.fact-card i {
+  font-size: 2.2rem;
+  color: #fff;
+}
+
+.fact-card:hover {
+  transform: translateY(-6px);
+}
+
+@media (max-width: 1100px) {
+  .fun-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}
+
+/* Personality Cards */
+.baseball-card-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* force 5 cards per row */
+  gap: 2.3rem;
+  max-width: 1600px;
+  margin: 2rem auto;
+  padding: 2rem 0;
+  padding-top: 200px;
+  justify-content: center;
+}
+
+.baseball-card {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 24px;
+  padding: 1rem;
+  backdrop-filter: blur(12px);
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  display: flex;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(60px);
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease,
+    opacity 0.8s ease;
+  will-change: transform;
+}
+
+.baseball-card:hover {
+  transform: rotateX(6deg) rotateY(-6deg) scale(1.03);
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8), 0 0 40px 5px rgba(255, 255, 255, 0.8);
+}
+
+.card-tilt {
+  padding: 1rem;
+  border-radius: 24px;
+  backdrop-filter: blur(12px);
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.baseball-card:hover .card-tilt {
+  transform: rotateX(6deg) rotateY(-6deg) scale(1.03);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.baseball-card img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.baseball-card h3 {
+  font-size: 1rem;
+  color: #111;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.baseball-card p {
+  font-size: .8rem;
+  color: #333;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+
+@media (max-width: 1100px) {
+  .baseball-card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .baseball-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .baseball-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .baseball-card {
+    max-width: 90%;
+    padding: 1rem;
+  }
+
+  .baseball-card h3 {
+    font-size: 1rem;
+  }
+
+  .baseball-card p {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* 🎨 Unique Background Accents */
+.card-goofy {
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  color: #111;
+}
+
+.card-creative {
+  background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+  color: #111;
+}
+
+/* Add more like: .card-analytical, .card-nerdy, etc. */
+
+#experience {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+#experience.visible {
+  opacity: 1;
+}
+
+/* CTA Button */
+.cta-button-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: #000;
+  color: #fff;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease, color 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+  background-color: #111;
+  color: #fff;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8), 0 0 40px 5px rgba(255, 255, 255, 0.8);
+}
+
+/* Footer */
+footer {
+  background-color: #fff;
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid #eaeaea;
+  font-size: 0.9rem;
+}
+
+.social-icons a {
+  margin: 0 1rem;
+  color: #0077cc;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
