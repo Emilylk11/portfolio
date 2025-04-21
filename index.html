@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Emily Kuntze | Portfolio" />
+  <title>Emily Kuntze | Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="hero">
+    <!-- Background video -->
+    <video autoplay muted loop playsinline class="bg-video">
+      <source src="assets/hero-video.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Fixed Transparent Navbar -->
+    <nav class="navbar video-navbar">
+      <div class="nav-content">
+        <div class="nav-left">
+          <a href="#" class="logo">Emily Kuntze</a>
+        </div>
+
+        <div class="nav-center">
+          <a href="projects.html">Projects</a>
+          <a href="about.html">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="nav-right">
+          <a href="https://linkedin.com/in/emilykuntze" target="_blank">LinkedIn</a>
+          <a href="mailto:kuntzeemily@gmail.com">Email</a>
+          <a href="https://behance.net/emilykuntze" target="_blank">Behance</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Text -->
+    <div class="hero-content">
+      <h1>Emily Kuntze</h1>
+      <p>Designing with purpose. Marketing with data. Telling stories that convert.</p>
+      <span class="skills">UX/UI • Analytics • Branding • Web Design</span>
+      <div class="hero-button-container">
+        <a class="cta-button" href="projects.html">Enter My Paradise</a>
+      </div>
+    </div>
+  </header>
+
+  <footer>
+    <p>&copy; 2025 Emily Kuntze</p>
+  </footer>
+
+  <script>
+    // Page fade-in effect
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('fade-in');
+    });
+
+    // Page fade-out effect on navigation
+    document.querySelectorAll('a[href]').forEach(link => {
+      const href = link.getAttribute('href');
+      if (!href.startsWith('#') && !href.startsWith('http')) {
+        link.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.body.classList.remove('fade-in');
+          document.body.style.opacity = 0;
+          setTimeout(() => {
+            window.location.href = href;
+          }, 400);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

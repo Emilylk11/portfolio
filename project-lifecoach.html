@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="UNCOMN Website Redesign Case Study by Emily Kuntze" />
+  <title>OnderLaw Branding Refresh | Emily Kuntze</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<header class="navbar video-navbar">
+  <video autoplay muted loop playsinline class="nav-video">
+    <source src="assets/hero-video.mp4" type="video/mp4" />
+  </video>
+
+  <div class="nav-content">
+    <div class="nav-left">
+      <a href="index.html" class="logo">Emily Kuntze</a>
+    </div>
+
+    <nav class="nav-center">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="https://linkedin.com/in/emilykuntze" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="mailto:kuntzeemily@gmail.com" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://behance.net/emilykuntze" target="_blank" aria-label="Behance">
+        <i class="fab fa-behance"></i>
+      </a>
+    </div>
+  </div>
+</header>
+
+  <main class="case-elevated">
+    <section class="case-header">
+      <img src="assets/uncomn-thumbnail.png" alt="OnderLaw Branding Refresh" class="hero-image" />
+      <div class="header-content">
+        <h1>OnderLaw Branding Refresh</h1>
+        <p>Giving a respected law firm a modern voice and cohesive identity</p>
+      </div>
+    </section>
+
+    <section class="case-body">
+      <div class="case-block">
+        <h2>Overview</h2>
+        <p>OnderLaw needed a modern brand refresh that honored their established reputation while better connecting with clients emotionally. I led a visual identity overhaul paired with new content and hero section design.</p>
+      </div>
+
+      <div class="case-block">
+        <h2>Project Scope</h2>
+        <p>Developed a cohesive brand style guide including typography, color, iconography, hero sections, and video thumbnails. Designed new social post templates, landing page banners, and homepage hero visuals to align with a powerful narrative of justice and client care.</p>
+      </div>
+
+<div class="case-block process-section">
+  <h2>My Process</h2>
+  <div class="process-grid">
+    <div class="process-card fade-in-stagger">Step 1: Identified key values and emotional tone through client interviews</div>
+    <div class="process-card fade-in-stagger">Step 2: Built a refreshed logo system and scalable typography palette</div>
+    <div class="process-card fade-in-stagger">Step 3: Created branded layouts for web, social, and event content</div>
+    <div class="process-card fade-in-stagger">Step 4: Finalized hero mockups and implemented brand across channels</div>
+  </div>
+</div>
+
+<div class="case-block tools-carousel-section">
+  <h2>Tools I Used</h2>
+  <div class="carousel-track">
+    <div class="carousel-item"><img src="assets/tools/adobeillustrator.svg" alt="Adobe Illustrator" /></div>
+    <div class="carousel-item"><img src="assets/tools/photoshop.svg" alt="Photoshop" /></div>
+    <div class="carousel-item"><img src="assets/tools/indesign.svg" alt="InDesign" /></div>
+    <div class="carousel-item"><img src="assets/tools/figma.svg" alt="Figma" /></div>
+    <div class="carousel-item"><img src="assets/tools/canva.svg" alt="Canva" /></div>
+    <!-- Repeat if you want infinite scroll effect -->
+  </div>
+</div>
+
+<div class="case-block image-block">
+  <h2>Before & After</h2>
+  <div class="ba-container">
+    <div class="ba-img-wrap">
+      <img src="assets/uncomn-before.png" alt="Before" class="ba-img before-img" />
+      <div class="after-wrapper">
+        <img src="assets/uncomn-after.png" alt="After" class="ba-img after-img" />
+      </div>
+      <div class="slider-line"></div>
+      <input type="range" min="0" max="100" value="50" class="ba-slider" />
+    </div>
+  </div>
+</div>
+
+<div class="case-block results-block">
+  <h2>Results</h2>
+<div class="results-grid">
+  <div class="results-wrapper">
+    <div class="result-item">
+      <span class="stat"><span class="counter" data-target="41">0</span>%</span>
+      <p>increase in homepage retention</p>
+    </div>
+  </div>
+  <div class="results-wrapper">
+    <div class="result-item">
+      <span class="stat"><span class="counter" data-target="100">0</span>%</span>
+      <p>unified identity adopted across web, print, and video platforms</p>
+    </div>
+  </div>
+ </section>
+     
+     <section>
+      <div class="case-links">
+        <a class="cta-button" href="projects.html">← Back to Projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Emily Kuntze</p>
+  </footer>
+
+<script>
+  const counters = document.querySelectorAll('.counter');
+  const resultsGrid = document.querySelector('.results-grid');
+
+  const animateCounters = () => {
+    counters.forEach(counter => {
+      counter.innerText = '0';
+      const update = () => {
+        const target = +counter.getAttribute('data-target');
+        const current = +counter.innerText;
+        const increment = target / 100;
+
+        if (current < target) {
+          counter.innerText = (current + increment).toFixed(1);
+          requestAnimationFrame(update);
+        } else {
+          counter.innerText = target.toFixed(1);
+        }
+      };
+      update();
+    });
+  };
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        resultsGrid.classList.add('visible');
+        animateCounters();
+        observer.unobserve(resultsGrid);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  observer.observe(resultsGrid);
+</script>
+
+<script>
+  const staggerElements = document.querySelectorAll('.fade-in-stagger');
+
+  const staggerObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, index * 150); // 150ms stagger between cards
+        staggerObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  staggerElements.forEach(el => staggerObserver.observe(el));
+</script>
+
+<script>
+  const slider = document.querySelector('.ba-slider');
+  const afterImg = document.querySelector('.after-img');
+  const sliderLine = document.querySelector('.slider-line');
+
+  slider.addEventListener('input', (e) => {
+    const value = e.target.value;
+    afterImg.style.clipPath = `inset(0 ${100 - value}% 0 0)`;
+    sliderLine.style.left = `${value}%`;
+  });
+</script>
+
+<script>
+  // Page fade in
+  document.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('fade-in');
+  });
+
+  // Page fade out on link click
+  document.querySelectorAll('a[href]').forEach(link => {
+    const href = link.getAttribute('href');
+
+    // Skip anchor links and external links
+    if (!href.startsWith('#') && !href.startsWith('http')) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.body.classList.remove('fade-in');
+        document.body.style.opacity = 0;
+        setTimeout(() => {
+          window.location.href = href;
+        }, 400); // match fade out duration
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

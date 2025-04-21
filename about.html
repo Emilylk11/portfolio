@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Emily Kuntze</title>
+  <link rel="stylesheet" href="css/aboutcustom.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />     
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body class="about-page">
+  
+<header class="navbar video-navbar">
+  <video autoplay muted loop playsinline class="nav-video">
+    <source src="assets/hero-video.mp4" type="video/mp4" />
+  </video>
+
+  <div class="nav-content">
+    <div class="nav-left">
+      <a href="index.html" class="logo">Emily Kuntze</a>
+    </div>
+
+    <nav class="nav-center">
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="https://linkedin.com/in/emilykuntze" target="_blank" aria-label="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="mailto:kuntzeemily@gmail.com" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://behance.net/emilykuntze" target="_blank" aria-label="Behance">
+        <i class="fab fa-behance"></i>
+      </a>
+    </div>
+  </div>
+
+
+
+</header>
+
+  <main class="about">
+  <section class="about-hero">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h1>Hi, I'm Emily Kuntze</h1>
+          <p>I'm a web designer and digital strategist who blends creativity with data to craft meaningful user experiences.</p>
+          <div class="buttons">
+            <a href="assets/documents/Emily-Kuntze-Resume.pdf" class="btn" download>Download Resume</a>
+            <a href="contact.html" class="btn secondary">Contact Me</a>
+          </div>
+        </div>
+        <div class="about-image">
+          <img src="assets/personal/lighting.jpg" alt="Emily Kuntze Portrait">
+        </div>
+      </div>
+    </div>
+  </section>
+
+ <!-- Scroll Reveal Baseball Cards -->
+<section class="baseball-card-grid">
+  <div class="baseball-card" data-index="0">
+    <div class="card-tilt">
+      <img src="assets/personal/photography-two.jpeg" alt="Goofy Emily" />
+      <h3>Creative Storyteller</h3>
+      <p>Whether it’s design, video, or a podcast mic, I love turning ideas into visuals and stories that stick.</p>
+    </div>
+  </div>
+
+  <div class="baseball-card" data-index="1">
+    <div class="card-tilt">
+      <img src="assets/personal/emily-latte.jpg" alt="Goofy Emily" />
+      <h3>Lover of Mornings & Lattes</h3>
+      <p>Early mornings, cafés, and a latte is all i need before diving into a creative sprint.</p>
+    </div>
+  </div>
+
+  <div class="baseball-card" data-index="2">
+    <div class="card-tilt">
+      <img src="assets/personal/gymrat.jpg" alt="Goofy Emily" />
+      <h3>Gym-Rat with a Balanced Routine</h3>
+      <p>Movement fuels my creativity. Whether I’m lifting weights or getting steps in, the gym is my reset button.</p>
+    </div>
+  </div>
+
+  <div class="baseball-card" data-index="3">
+    <div class="card-tilt">
+      <img src="assets/personal/emily-dallas.jpg" alt="Goofy Emily" />
+      <h3>Big on Friends & Connections</h3>
+      <p>I’m always down for a spontaneous hangout, deep conversation, or late-night laugh. My people are everything.</p>
+    </div>
+  </div>
+
+  <div class="baseball-card" data-index="4">
+    <div class="card-tilt">
+      <img src="assets/personal/emily-barcelona.jpg" alt="Goofy Emily" />
+      <h3>Forever Planning My Next Trip</h3>
+      <p>Travel keeps me curious. I’m always chasing new views, good eats, and city streets to explore on foot.</p>
+    </div>
+  </div>
+</section>
+
+<div class="card-stack-spacer" style="height: 5vh;"></div>
+
+    <!-- Experience & Skills Grid -->
+    <section id="experience" class="experience-skills fade-in">
+     <div class="experience-philosophy">
+      <div class="experience">
+        <div class="timeline-item">
+          <h4>2021 – PRESENT</h4>
+          <h3>UNCOMN</h3>
+          <p>Digital Media Specialist</p>
+        </div>
+        <div class="timeline-item">
+          <h4>2021 – PRESENT</h4>
+          <h3>Freelance</h3>
+          <p>Multimedia, Website Design, and Branding Consultant</p>
+        </div>
+        <div class="timeline-item">
+          <h4>2021 – 2023</h4>
+          <h3>Webster University</h3>
+          <p>Social Media Manager</p>
+        </div>
+      </div>
+
+    <!-- Design Philosophy -->
+    <div class="philosophy">
+      <h4>DESIGN PHILOSOPHY</h4>
+      <p class="quote">“Data-driven creativity for impactful, tailored solutions”</p>
+    </div>
+  </div>
+
+<section class="skills-section">
+  <h4>Skills</h4>
+
+  <div class="skill-filters">
+    <button class="active" data-category="all">All</button>
+    <button data-category="cms">CMS</button>
+    <button data-category="web">Web Dev</button>
+    <button data-category="design">Design</button>
+    <button data-category="analytics">Analytics</button>
+    <button data-category="seo">SEO</button>
+  </div>
+
+  <div class="skills-grid">
+    <!-- CMS -->
+    <div class="skill-icon show" data-category="cms"><i class="fab fa-wordpress"></i></div>
+    <div class="skill-icon show" data-category="cms"><i class="fab fa-hubspot"></i></div>
+
+    <!-- Web Dev -->
+    <div class="skill-icon show" data-category="web"><i class="fab fa-html5"></i></div>
+    <div class="skill-icon show" data-category="web"><i class="fab fa-css3-alt"></i></div>
+    <div class="skill-icon show" data-category="web"><i class="fab fa-js"></i></div>
+    <div class="skill-icon show" data-category="web"><i class="fab fa-github"></i></div>
+    <div class="skill-icon show" data-category="web"><i class="devicon-webflow-original" title="Webflow"></i></div>
+
+    <!-- Design -->
+    <div class="skill-icon" data-category="design"><i class="devicon-figma-plain"></i></div>
+    <div class="skill-icon" data-category="design"><i class="devicon-canva-plain"></i></div>
+    <div class="skill-icon" data-category="design"><i class="devicon-dreamweaver-plain"></i></i></div>
+    <div class="skill-icon" data-category="design"><i class="devicon-illustrator-plain" title="Illustrator"></i></div>
+    <div class="skill-icon" data-category="design"><i class="devicon-photoshop-plain" title="Photoshop"></i></div>
+    <div class="skill-icon" data-category="design"><i class="devicon-premierepro-plain" title="Premiere Pro"></i></div>
+
+    <!-- Analytics -->
+   <div class="skill-icon" data-category="analytics">
+   <img src="assets/tools/ga4.svg" alt="GA4" title="Google Analytics" />
+   </div>
+   <div class="skill-icon" data-category="analytics">
+   <img src="assets/tools/tag-manager.svg" alt="GTM" title="Google Tag Manager" />
+   </div>
+   <div class="skill-icon" data-category="analytics">
+   <img src="assets/tools/looker.svg" alt="Looker Studio" title="Google Looker Studio" />
+   </div>
+   <div class="skill-icon" data-category="analytics">
+  <img src="assets/tools/pagespeedinsights.svg" alt="PageSpeed Insights" />
+   </div>
+
+    <!-- SEO -->
+    <div class="skill-icon show" data-category="seo"><i class="fab fa-linkedin"></i></div>
+   <div class="skill-icon" data-category="seo">
+   <img src="assets/tools/lighthouse.svg" alt="Lighthouse" />
+   </div>
+   <div class="skill-icon" data-category="seo">
+   <img src="assets/tools/googlesearchconsole.svg" alt="Google Search Console" />
+   </div>
+   <div class="skill-icon" data-category="seo">
+   <img src="assets/tools/semrush.svg" alt="SEMrush" />
+   </div>
+
+  </div>
+</section>
+
+    <!-- Fun Facts -->
+    <section class="fun-facts fade-in">
+      <h4>5 INSIDER FACTS</h4>
+      <div class="fun-grid">
+        <div class="fact-card"><i class="fas fa-star"></i> Reposted by NBA + NFL</div>
+        <div class="fact-card"><i class="fas fa-desktop"></i> Built My Own PC</div>
+        <div class="fact-card"><i class="fas fa-seedling"></i> Brussel Sports Enthusiast</div>
+        <div class="fact-card"><i class="fas fa-cookie-bite"></i> High-Protein Dessert Gal</div>
+        <div class="fact-card"><i class="fas fa-basketball-ball"></i> Retired College Hooper</div>
+      </div>
+    </section>
+
+    <!-- CTA Button -->
+<div class="cta-button-wrapper">
+  <a href="#" class="btn secondary">Let's Get Started</a>
+</div>
+
+  </main>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  const cards = gsap.utils.toArray(".baseball-card");
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".baseball-card-grid", // the container section
+      start: "top top",
+      end: "+=800", // total scroll distance
+      scrub: true, // ties animation progress to scroll position
+      pin: true, // keep it pinned
+      anticipatePin: 1, // allows smoother flow for fade-in below
+    }
+  });
+
+  cards.forEach((card, i) => {
+    tl.fromTo(card,
+      { opacity: 0, y: 80 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: "power2.out"
+      },
+      i * 0.8 // stagger the card entries by scroll distance
+    );
+  });
+</script>
+
+<script>
+  // Restore existing fade-in animations
+  const fadeElements = document.querySelectorAll('.fade-in');
+
+  const fadeObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        fadeObserver.unobserve(entry.target); // this matches the correct variable
+      }
+    });
+  }, { threshold: 0.2 });
+
+  fadeElements.forEach(el => fadeObserver.observe(el));
+</script>
+
+
+<script>
+  const experienceSection = document.querySelector("#experience");
+
+  const expObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        experienceSection.classList.add("visible");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  expObserver.observe(experienceSection);
+</script>
+
+<script>
+  const filterButtons = document.querySelectorAll('.skill-filters button');
+  const skillIcons = document.querySelectorAll('.skill-icon');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const category = btn.getAttribute('data-category');
+
+      skillIcons.forEach(icon => {
+        if (category === 'all' || icon.getAttribute('data-category') === category) {
+          icon.classList.add('show');
+        } else {
+          icon.classList.remove('show');
+        }
+      });
+    });
+  });
+
+  // Show all by default
+  document.querySelector('[data-category="all"]').click();
+</script>
+
+
+</body>
+</html>
