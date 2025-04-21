@@ -101,6 +101,11 @@ body.fade-in {
   font-family: 'Montserrat', sans-serif;
 }
 
+/* Transparent Navbar Fix for Home Page */
+body.home-page .navbar {
+  background-color: transparent !important;
+  box-shadow: none;
+}
 
 /* Hero Section */
 .hero {
