@@ -259,7 +259,7 @@ body.project-gallery-page {
 
 .hero-image {
   width: auto;
-  max-height: 300px;
+  max-height: 400px;
   padding: 3rem;
   object-fit: contain;
   border-radius: 12px;
