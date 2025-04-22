@@ -131,17 +131,23 @@ body.fade-in {
 
 @media screen and (max-width: 768px) {
   .project-card {
-    flex-direction: column;
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
     text-align: center;
+    gap: 1.5rem;
   }
 
   .project-card img {
-    margin-bottom: 1rem;
     max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-radius: 16px;
   }
 
   .project-info {
     padding: 0;
+    width: 100%;
   }
 }
 
