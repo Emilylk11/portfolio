@@ -650,20 +650,21 @@ main.about {
 }
 
 /* Footer */
-footer {
-  background-color: #fff;
-  padding: 2rem;
+.site-footer {
+  background-color: #ffffff;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
   text-align: center;
   border-top: 1px solid #eaeaea;
   font-size: 0.9rem;
+  color: #555;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.social-icons a {
-  margin: 0 1rem;
-  color: #0077cc;
-  font-weight: bold;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+.site-footer p {
+  margin: 0;
 }
 
 .off-canvas-menu {
