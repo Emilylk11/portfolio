@@ -107,7 +107,7 @@ body.fade-in {
 }
 
 .project-info p {
-  color: #kkk;
+  color: #555;
   font-size: .85rem;
   margin-bottom: 1.5rem;
 }
@@ -132,28 +132,28 @@ body.fade-in {
 /* Mobile Fix */
 @media screen and (max-width: 768px) {
   .project-card {
-    display: flex;
     flex-direction: column !important;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    gap: 1.5rem;
     padding: 2rem 1.25rem;
   }
 
   .project-card img {
-    max-width: 100%;
+    width: 100%;
+    max-width: 300px;
     height: auto;
-    margin: 0 auto;
-    border-radius: 16px;
+    margin: 0 auto 1rem;
+    display: block;
   }
 
   .project-info {
-    padding: 0;
     width: 100%;
-    min-height: 160px; /* 👈 forces equal-ish vertical space */
+    padding: 0;
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
   }
 
   .project-info h2 {
@@ -165,11 +165,13 @@ body.fade-in {
     font-size: 0.85rem;
     margin-bottom: 1rem;
     color: #555;
+    max-width: 90%;
   }
 
   .cta-button {
     font-size: 0.85rem;
     padding: 0.6rem 1.5rem;
+    margin-top: 0.5rem;
   }
 }
 
