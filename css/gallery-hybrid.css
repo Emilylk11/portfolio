@@ -129,6 +129,7 @@ body.fade-in {
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
 }
 
+/* Mobile Fix */
 @media screen and (max-width: 768px) {
   .project-card {
     display: flex;
@@ -136,6 +137,7 @@ body.fade-in {
     align-items: center;
     text-align: center;
     gap: 1.5rem;
+    padding: 2rem 1.25rem;
   }
 
   .project-card img {
@@ -148,8 +150,29 @@ body.fade-in {
   .project-info {
     padding: 0;
     width: 100%;
+    min-height: 160px; /* 👈 forces equal-ish vertical space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .project-info h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .project-info p {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+    color: #555;
+  }
+
+  .cta-button {
+    font-size: 0.85rem;
+    padding: 0.6rem 1.5rem;
   }
 }
+
 
 /* Navbar Styles - Cleaned */
 .navbar.video-navbar {
