@@ -190,21 +190,21 @@ body.home-page .navbar {
 }
 
 /* Footer */
-footer {
-  background-color: #fff;
-  padding: 2rem;
-  margin-top: 80px;
+.site-footer {
+  background-color: #ffffff;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
   text-align: center;
   border-top: 1px solid #eaeaea;
   font-size: 0.9rem;
+  color: #555;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.social-icons a {
-  margin: 0 1rem;
-  color: #000000;
-  font-weight: bold;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+.site-footer p {
+  margin: 0;
 }
 
 /* styles.css — Updated for Naomi-Inspired Project Pages */
@@ -454,23 +454,6 @@ body.project-gallery-page {
   }
 }
 
-/* Footer */
-footer {
-  background-color: #fff;
-  padding: 2rem;
-  text-align: center;
-  border-top: 1px solid #eaeaea;
-  font-size: 0.9rem;
-}
-
-.social-icons a {
-  margin: 0 1rem;
-  color: #0077cc;
-  font-weight: bold;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
 /* Cleaned and Polished NaomiCreates-Inspired Gallery CSS */
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
@@ -519,23 +502,6 @@ body {
   margin-top: 0.25rem;
   font-size: 0.9rem;
   color: #ddd;
-}
-
-footer {
-  background-color: #fff;
-  padding: 2rem;
-  text-align: center;
-  border-top: 1px solid #eaeaea;
-  font-size: 0.9rem;
-  color: #555;
-}
-
-.social-icons a {
-  margin: 0 1rem;
-  color: #0077cc;
-  font-weight: bold;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
 }
 
 .results-grid {
@@ -1129,11 +1095,4 @@ body {
 
 main {
   flex: 1;
-}
-
-footer {
-  text-align: center;
-  padding: 2rem 0;
-  background: transparent;
-  font-size: 0.85rem;
 }
