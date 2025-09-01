@@ -333,5 +333,67 @@
     });
   });
 </script>
+
+  <script>
+  (function () {
+    const images = document.querySelectorAll('.assets-grid .lightbox-thumb');
+    if (!images.length) return;
+
+    const modal = document.createElement('div');
+    modal.classList.add('lightbox-modal');
+    modal.innerHTML = `
+      <button class="lightbox-close" aria-label="Close">&times;</button>
+      <img src="" alt="Expanded Image" />
+      <div class="lightbox-controls">
+        <button class="prev" aria-label="Previous">&#10094;</button>
+        <button class="next" aria-label="Next">&#10095;</button>
+      </div>
+    `;
+    document.body.appendChild(modal);
+
+    const modalImg = modal.querySelector('img');
+    const closeBtn = modal.querySelector('.lightbox-close');
+    const nextBtn  = modal.querySelector('.next');
+    const prevBtn  = modal.querySelector('.prev');
+    let currentIndex = 0;
+
+    function open(index) {
+      currentIndex = index;
+      modalImg.src = images[currentIndex].src;
+      modalImg.alt = images[currentIndex].alt || 'Expanded preview';
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function close() {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      modalImg.src = '';
+    }
+
+    function next() { open((currentIndex + 1) % images.length); }
+    function prev() { open((currentIndex - 1 + images.length) % images.length); }
+
+    images.forEach((img, i) => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', () => open(i));
+    });
+
+    closeBtn.addEventListener('click', close);
+    nextBtn.addEventListener('click', next);
+    prevBtn.addEventListener('click', prev);
+
+    modal.addEventListener('click', (e) => { if (e.target === modal) close(); });
+    document.addEventListener('keydown', (e) => {
+      if (!modal.classList.contains('active')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowRight') next();
+      if (e.key === 'ArrowLeft') prev();
+    });
+  })();
+</script>
+
 </body>
 </html>
