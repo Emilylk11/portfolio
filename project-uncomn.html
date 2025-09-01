@@ -123,7 +123,9 @@
 
 <div class="case-block assets-section">
   <h2>Additional Visuals</h2>
-  <p>Here’s a closer look at key brand elements, app mockups, and marketing assets that supported the FaithFlow concept launch.</p>
+  <p>A closer look at key components from the UNCOMN redesign: refreshed service-page UI,
+  mobile-first layouts, and conversion assets (CTA patterns, form treatments, iconography)
+  used across the site to improve clarity and lead flow.</p>
 
   <div class="assets-grid">
     <img src="assets/uncomn-project/uncomn-tech.png" alt="UNCOMN Branding" class="lightbox-thumb" />
@@ -260,6 +262,60 @@
   });
 </script>
 
+<script>
+  const images = document.querySelectorAll('.assets-grid img');
+  const modal = document.createElement('div');
+  modal.classList.add('lightbox-modal');
+  modal.innerHTML = `
+    <button class="lightbox-close">&times;</button>
+    <img src="" alt="Expanded Image" />
+    <div class="lightbox-controls">
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  const modalImg = modal.querySelector('img');
+  const closeBtn = modal.querySelector('.lightbox-close');
+  const nextBtn = modal.querySelector('.next');
+  const prevBtn = modal.querySelector('.prev');
+  let currentIndex = 0;
+
+  function showModal(index) {
+    modalImg.src = images[index].src;
+    modal.classList.add('active');
+    currentIndex = index;
+  }
+
+  function closeModal() {
+    modal.classList.remove('active');
+  }
+
+  function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length;
+    modalImg.src = images[currentIndex].src;
+  }
+
+  function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    modalImg.src = images[currentIndex].src;
+  }
+
+  images.forEach((img, index) => {
+    img.addEventListener('click', () => showModal(index));
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  nextBtn.addEventListener('click', nextImage);
+  prevBtn.addEventListener('click', prevImage);
+
+  // Close on outside click
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+</script>
+
   <script>
   function toggleMenu() {
     const menu = document.getElementById('mobileMenu');
@@ -277,7 +333,5 @@
     });
   });
 </script>
-
-
 </body>
 </html>
