@@ -126,7 +126,7 @@ body.fade-in {
 }
 
 .contact-form h2 {
-  text-align: center;
+  text-align: center !important;
   font-size: 2rem;
   margin-bottom: 0.5rem;
 }
@@ -280,4 +280,5 @@ body.fade-in {
     display: none !important;
   }
 }
+
 
