@@ -50,11 +50,11 @@
 @keyframes toolsScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* Before / After toggle */
-.ba-toggle-section{margin-bottom:4.5rem}
+.ba-toggle-section{margin-bottom:5rem;padding-bottom:1.5rem}
 .ba-container{position:relative;max-width:700px;margin:0 auto;border-radius:16px;overflow:hidden;border:1px solid var(--border)}
 .ba-img{width:100%;display:block;border-radius:16px}
 .ba-img.hidden{display:none}
-.ba-controls{display:flex;justify-content:center;gap:.5rem;margin-top:1rem}
+.ba-controls{display:flex;justify-content:center;gap:.5rem;margin-top:1.25rem;padding-bottom:.5rem}
 .ba-btn{font-family:inherit;font-size:.75rem;font-weight:500;letter-spacing:.03em;padding:.5rem 1.5rem;border-radius:8px;border:1px solid var(--border-hover);background:transparent;color:var(--text-2);cursor:pointer;transition:all .25s}
 .ba-btn.active{background:var(--ice-bg);color:var(--ice);border-color:var(--ice-border)}
 .ba-btn:hover:not(.active){color:var(--text-1);border-color:var(--text-3)}
