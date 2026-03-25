@@ -1,180 +1,284 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Emily Kuntze Portfolio">
-  <title>Portfolio | Emily Kuntze</title>
-  <link rel="stylesheet" href="css/gallery-hybrid.css">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Emily Kuntze</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/main-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  
-</head>
-<body class="project-gallery-page">
-<!-- Hamburger Icon -->
-<div class="hamburger" onclick="toggleMenu()">
-  <i class="fas fa-bars"></i>
-</div>
+  <link rel="stylesheet" href="css/shared.css">
+  <script>(function(){var s=localStorage.getItem('theme');var p=window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',s||p)})()</script>
+  <style>
+    /* ═══ PROJECTS PAGE ═══ */
 
-<!-- Off-Canvas Mobile Menu -->
-<nav id="mobileMenu" class="off-canvas-menu">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="projects.html">Projects</a>
-  <a href="contact.html">Contact</a>
-</nav>
-  
-  <header class="navbar video-navbar">
-    <video autoplay muted loop playsinline class="nav-video">
-      <source src="assets/hero-video.mp4" type="video/mp4" />
-    </video>
+    /* Page hero — compact */
+    .page-hero{position:relative;padding:8rem 3rem 4rem;text-align:center;overflow:hidden}
+    .page-hero .mesh-h1{width:500px;height:500px;background:var(--mesh-1);top:-20%;right:20%;filter:blur(140px)}
+    .page-hero .mesh-h2{width:400px;height:400px;background:var(--mesh-3);bottom:-10%;left:15%;filter:blur(140px)}
+    .page-hero-title{font-size:clamp(2.5rem,5vw,4rem);font-weight:700;letter-spacing:-.035em;margin-bottom:.75rem}
+    .page-hero-title em{font-style:normal;color:var(--ice)}
+    .page-hero-desc{font-size:1rem;font-weight:300;color:var(--text-2);max-width:520px;margin:0 auto 2.5rem;line-height:1.7}
 
-    <div class="nav-content">
-      <div class="nav-left">
-        <a href="index.html" class="logo">Emily Kuntze</a>
-      </div>
+    /* Filters */
+    .filters{display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:0}
+    .filter-btn{font-family:inherit;font-size:.75rem;font-weight:500;letter-spacing:.03em;padding:.5rem 1.25rem;border-radius:8px;border:1px solid var(--border-hover);background:transparent;color:var(--text-2);cursor:pointer;transition:all .25s}
+    .filter-btn:hover{color:var(--text-1);border-color:var(--text-3);background:var(--glow)}
+    .filter-btn.active{background:var(--ice-bg);color:var(--ice);border-color:var(--ice-border)}
 
-      <nav class="nav-center">
-        <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+    /* Projects grid — larger cards for dedicated page */
+    .proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;max-width:1200px;margin:0 auto;padding:0 3rem}
 
-      <div class="nav-right">
-        <a href="https://linkedin.com/in/emilykuntze" target="_blank" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="mailto:kuntzeemily@gmail.com" aria-label="Email">
-          <i class="fas fa-envelope"></i>
-        </a>
-        <a href="https://behance.net/emilykuntze" target="_blank" aria-label="Behance">
-          <i class="fab fa-behance"></i>
-        </a>
-      </div>
-    </div>
-  </header>
+    .proj-card{position:relative;background:var(--bg-card);border:1px solid var(--border);border-radius:20px;overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:all .4s cubic-bezier(.03,.98,.52,.99);transform-style:preserve-3d}
+    .proj-card:hover{border-color:var(--border-hover);box-shadow:0 20px 60px rgba(0,0,0,.25);transform:translateY(-4px)}
 
- <main class="project-gallery-page">
-  <section class="intro">
-    <h1>MY PROJECTS</h1>
-    <p>A collection of strategy-led creative work that bridges design, storytelling, and digital experiences.</p>
-  </section>
+    .proj-card-thumb{width:100%;height:260px;overflow:hidden;background:var(--surface)}
+    .proj-card-thumb img{width:100%;height:100%;object-fit:cover;filter:brightness(var(--img-b)) saturate(.9);transition:all .5s}
+    .proj-card:hover .proj-card-thumb img{filter:brightness(var(--img-bh)) saturate(1);transform:scale(1.04)}
 
-  <section class="hybrid-gallery">
-    <div class="project-card">
-      <img src="assets\thumbnails\uncomn-thumbnail.jpg" alt="UNCOMN Website Redesign">
-      <div class="project-info">
-        <h2>Conversion-Focused Website Redesign</h2>
-        <p>UX Design | Conversion Strategy | Web Dev | Analytics</p>
-        <a href="project-uncomn.html" class="cta-button">View UNCOMN's Enhanced Site</a>
-      </div>
-    </div>
+    .proj-card-body{padding:1.75rem 2rem 2rem;flex:1;display:flex;flex-direction:column}
 
-    <div class="project-card">
-      <img src="assets/thumbnails/onderlaw-thumbnail.jpg" alt="OnderLaw Thumbnail">
-      <div class="project-info">
-        <h2>Onder Law Branding Refresh</h2>
-        <p>Visual Identity | Content Creation | Legal Branding</p>
-        <a href="project-onderlaw.html" class="cta-button">View Onder Law's New Look</a>
-      </div>
-    </div>
+    .proj-card-tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.75rem}
+    .proj-card-tags span{font-size:.6rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ice);padding:.2rem .6rem;border:1px solid var(--ice-tag-border);border-radius:6px;background:var(--ice-tag-bg)}
 
-    <div class="project-card">
-      <img src="assets/thumbnails/faithflow-thumbnail.jpg" alt="Faithflow Branding">
-      <div class="project-info">
-        <h2>Brand Identity + Launch Campaign</h2>
-        <p>Branding | App UI | Launch Campaign | Motion Design</p>
-        <a href="project-faithflow.html" class="cta-button">View Faithflow's New Journey</a>
-      </div>
-    </div>
+    .proj-card-title{font-size:1.3rem;font-weight:600;margin-bottom:.5rem;letter-spacing:-.015em;line-height:1.3}
+    .proj-card-desc{font-size:.85rem;font-weight:300;color:var(--text-3);line-height:1.7;flex:1}
 
-    <div class="project-card">
-      <img src="assets/thumbnails/uncomnsocialstrategy-thumbnail.jpg" alt="UNCOMN Social Media Strategy">
-      <div class="project-info">
-        <h2>Social Media Campaign Strategy</h2>
-        <p>Content Strategy | Social Templates | Alignment | Analytics</p>
-        <a href="project-uncomnsocialmedia.html" class="cta-button">View the Strategy</a>
-      </div>
-    </div>
+    .proj-card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--border)}
+    .proj-card-tools{display:flex;gap:.5rem;color:var(--text-3);font-size:.8rem}
+    .proj-card-link{display:inline-flex;align-items:center;gap:.35rem;font-size:.75rem;font-weight:500;color:var(--text-2);transition:color .25s}
+    .proj-card:hover .proj-card-link{color:var(--ice)}
+    .proj-card-link i{font-size:.65rem;transition:transform .25s}
+    .proj-card:hover .proj-card-link i{transform:translateX(3px)}
 
-    <div class="project-card">
-      <img src="assets/thumbnails/uncomnseoweb-thumbnail.jpg" alt="SEO and Web Optimization">
-      <div class="project-info">
-        <h2>SEO + Web Optimization</h2>
-        <p>SEO | UX Optimization | Analytics | Web Performance</p>
-        <a href="project-seo-optimization.html" class="cta-button">View the Optimization</a>
-      </div>
-    </div>
+    /* Spotlight on project cards */
+    .proj-card .card-spotlight{position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,var(--glow-s) 0%,transparent 70%);pointer-events:none;opacity:0;transition:opacity .3s;transform:translate(-50%,-50%);z-index:0}
+    .proj-card:hover .card-spotlight{opacity:1}
+    .proj-card>*:not(.card-spotlight){position:relative;z-index:1}
 
-    <div class="project-card">
-      <img src="assets/thumbnails/herodesigns-thumbnail.jpg" alt="Hero Section Designs">
-      <div class="project-info">
-        <h2>Hero Section Designs</h2>
-        <p>Hero Design | Scroll Animation | Messaging | UX/UI</p>
-        <a href="project-herodesigns.html" class="cta-button">View the Designs</a>
-      </div>
-    </div>
+    /* Section meshes */
+    .proj-section{position:relative;overflow:hidden;padding:2rem 0 6rem}
+    .proj-section .mesh-s1{width:500px;height:500px;background:var(--mesh-1);top:20%;right:-10%;filter:blur(140px)}
+    .proj-section .mesh-s2{width:400px;height:400px;background:var(--mesh-2);bottom:20%;left:-10%;filter:blur(140px)}
 
-    <div class="project-card">
-      <img src="assets/thumbnails/printmaterials-thumbnail.jpg" alt="Print Material Designs">
-      <div class="project-info">
-        <h2>Print Materials</h2>
-        <p>Print Design | Marketing Collateral | Brand Consistency</p>
-        <a href="project-printmaterials.html" class="cta-button">View the Materials</a>
-      </div>
-    </div>
+    /* CTA */
+    .cta-section .mesh-cta{width:600px;height:600px;background:var(--mesh-1);top:50%;left:50%;transform:translate(-50%,-50%);filter:blur(150px)}
 
-  </section>
-</main>
-
-<footer class="site-footer">
-  <p>&copy; 2025 Emily Kuntze</p>
-</footer>
-
-<script>
-  // Page fade in
-  document.addEventListener('DOMContentLoaded', () => {
-    document.body.classList.add('fade-in');
-  });
-
-  // Page fade out on link click
-  document.querySelectorAll('a[href]').forEach(link => {
-    const href = link.getAttribute('href');
-
-    // Skip anchor links and external links
-    if (!href.startsWith('#') && !href.startsWith('http')) {
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.body.classList.remove('fade-in');
-        document.body.style.opacity = 0;
-        setTimeout(() => {
-          window.location.href = href;
-        }, 400); // match fade out duration
-      });
+    /* Responsive */
+    @media(max-width:900px){
+      .proj-grid{grid-template-columns:1fr;padding:0 1.5rem}
+      .page-hero{padding:7rem 1.5rem 3rem}
     }
-  });
-</script>
+    @media(max-width:768px){
+      .proj-card-thumb{height:200px}
+    }
+  </style>
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="dot-grid"></div>
+  <div class="cursor-light" id="cursorLight"></div>
 
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo"><span>Emily</span> Kuntze</a>
+    <div class="nav-center"><a href="projects.html">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+    <div class="nav-right">
+      <a href="https://linkedin.com/in/emilykuntze" target="_blank" aria-label="LinkedIn" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://behance.net/emilykuntze" target="_blank" aria-label="Behance" class="social-link"><i class="fab fa-behance"></i></a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></button>
+      <a href="contact.html" class="nav-cta btn-magnetic">Get in touch</a>
+    </div>
+    <div class="menu-btn">
+      <button class="theme-toggle" id="themeToggleMob" aria-label="Toggle theme"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></button>
+      <button id="hamburger" style="background:none;border:none;color:var(--text-1);font-size:1.3rem;cursor:pointer" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+  <div class="mobile-overlay" id="mobileOverlay"><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="mesh mesh-h1"></div>
+    <div class="mesh mesh-h2"></div>
+    <h1 class="page-hero-title hero-enter hero-enter-d1">My <em>Projects</em></h1>
+    <p class="page-hero-desc hero-enter hero-enter-d2">Strategy-led creative work bridging design, data, and digital experiences. Each project tells a story of measurable impact.</p>
+
+    <div class="filters hero-enter hero-enter-d3">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="ux">UX / Web</button>
+      <button class="filter-btn" data-filter="brand">Branding</button>
+      <button class="filter-btn" data-filter="strategy">Strategy</button>
+      <button class="filter-btn" data-filter="seo">SEO / Analytics</button>
+    </div>
+  </section>
+
+  <div class="sep"></div>
+
+  <!-- PROJECTS GRID -->
+  <section class="proj-section">
+    <div class="mesh mesh-s1"></div>
+    <div class="mesh mesh-s2"></div>
+
+    <div class="proj-grid stg">
+
+      <a href="project-uncomn.html" class="proj-card reveal" data-cat="ux">
+        <div class="card-spotlight"></div>
+        <div class="proj-card-thumb"><img src="assets/thumbnails/uncomn-thumbnail.jpg" alt="UNCOMN" loading="lazy"></div>
+        <div class="proj-card-body">
+          <div class="proj-card-tags"><span>UX Design</span><span>Analytics</span><span>CRO</span></div>
+          <h3 class="proj-card-title">Conversion-Focused Website Redesign</h3>
+          <p class="proj-card-desc">Led a full-scale UX and content overhaul for UNCOMN, transforming an outdated corporate site into a modern, high-converting experience with GA4 + Consent Mode integration.</p>
+          <div class="proj-card-footer">
+            <div class="proj-card-tools"><i class="fab fa-figma"></i><i class="fab fa-wordpress"></i><i class="fab fa-google"></i></div>
+            <span class="proj-card-link">View case study <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="project-onderlaw.html" class="proj-card reveal" data-cat="brand">
+        <div class="card-spotlight"></div>
+        <div class="proj-card-thumb"><img src="assets/thumbnails/onderlaw-thumbnail.jpg" alt="OnderLaw" loading="lazy"></div>
+        <div class="proj-card-body">
+          <div class="proj-card-tags"><span>Branding</span><span>Visual Identity</span></div>
+          <h3 class="proj-card-title">OnderLaw Brand Refresh</h3>
+          <p class="proj-card-desc">Modern brand refresh for a respected law firm — new visual identity, hero sections, social templates, and video thumbnails aligned with a narrative of justice and care.</p>
+          <div class="proj-card-footer">
+            <div class="proj-card-tools"><i class="fab fa-figma"></i><i class="fab fa-adobe"></i></div>
+            <span class="proj-card-link">View case study <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="project-faithflow.html" class="proj-card reveal" data-cat="brand">
+        <div class="card-spotlight"></div>
+        <div class="proj-card-thumb"><img src="assets/thumbnails/faithflow-thumbnail.jpg" alt="FaithFlow" loading="lazy"></div>
+        <div class="proj-card-body">
+          <div class="proj-card-tags"><span>App UI</span><span>Campaign</span><span>Branding</span></div>
+          <h3 class="proj-card-title">FaithFlow Brand Identity + Launch</h3>
+          <p class="proj-card-desc">Concept-to-launch brand identity for a Gen Z prayer journaling app — logo, mobile UI mockups, onboarding flow, and a full marketing rollout kit.</p>
+          <div class="proj-card-footer">
+            <div class="proj-card-tools"><i class="fab fa-figma"></i><i class="fab fa-adobe"></i></div>
+            <span class="proj-card-link">View case study <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="project-uncomnsocialmedia.html" class="proj-card reveal" data-cat="strategy">
+        <div class="card-spotlight"></div>
+        <div class="proj-card-thumb"><img src="assets/thumbnails/uncomnsocialstrategy-thumbnail.jpg" alt="Social Strategy" loading="lazy"></div>
+        <div class="proj-card-body">
+          <div class="proj-card-tags"><span>Content Strategy</span><span>Social Media</span></div>
+          <h3 class="proj-card-title">Social Media Campaign Strategy</h3>
+          <p class="proj-card-desc">Built a quarterly campaign system for UNCOMN's LinkedIn — editorial calendars, caption frameworks, Canva templates, and KPI review dashboards.</p>
+          <div class="proj-card-footer">
+            <div class="proj-card-tools"><i class="fab fa-linkedin"></i><i class="fas fa-chart-bar"></i></div>
+            <span class="proj-card-link">View case study <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="project-seo-optimization.html" class="proj-card reveal" data-cat="seo">
+        <div class="card-spotlight"></div>
+        <div class="proj-card-thumb"><img src="assets/thumbnails/uncomnseoweb-thumbnail.jpg" alt="SEO" loading="lazy"></div>
+        <div class="proj-card-body">
+          <div class="proj-card-tags"><span>SEO</span><span>Performance</span><span>Analytics</span></div>
+          <h3 class="proj-card-title">SEO + Web Optimization</h3>
+          <p class="proj-card-desc">Full site audit with restructured on-page content, compressed assets, GA4 + Consent Mode implementation, and 10Web Booster integration.</p>
+          <div class="proj-card-footer">
+            <div class="proj-card-tools"><i class="fab fa-google"></i><i class="fas fa-tachometer-alt"></i></div>
+            <span class="proj-card-link">View case study <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="project-herodesigns.html" class="proj-card reveal" data-cat="ux">
+        <div class="card-spotlight"></div>
+        <div class="proj-card-thumb"><img src="assets/thumbnails/herodesigns-thumbnail.jpg" alt="Hero Designs" loading="lazy"></div>
+        <div class="proj-card-body">
+          <div class="proj-card-tags"><span>Hero Design</span><span>UX/UI</span></div>
+          <h3 class="proj-card-title">Hero Section Design Showcase</h3>
+          <p class="proj-card-desc">Collection of bold hero section designs across industries — IT consulting to legal — each built with scroll engagement, brand storytelling, and conversion CTAs.</p>
+          <div class="proj-card-footer">
+            <div class="proj-card-tools"><i class="fab fa-figma"></i><i class="fab fa-html5"></i></div>
+            <span class="proj-card-link">View case study <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="project-printmaterials.html" class="proj-card reveal" data-cat="brand">
+        <div class="card-spotlight"></div>
+        <div class="proj-card-thumb"><img src="assets/thumbnails/printmaterials-thumbnail.jpg" alt="Print Materials" loading="lazy"></div>
+        <div class="proj-card-body">
+          <div class="proj-card-tags"><span>Print Design</span><span>Collateral</span></div>
+          <h3 class="proj-card-title">Print & Product Design</h3>
+          <p class="proj-card-desc">High-impact print materials for events, workshops, and recruitment — retractable banners, one-pagers, and branded templates across departments.</p>
+          <div class="proj-card-footer">
+            <div class="proj-card-tools"><i class="fab fa-adobe"></i></div>
+            <span class="proj-card-link">View case study <i class="fas fa-arrow-right"></i></span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <div class="sep"></div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="mesh mesh-cta"></div>
+    <h2 class="cta-title reveal">Have a project in mind? <em>Let's talk.</em></h2>
+    <p class="cta-sub reveal">I'm always open to new collaborations and interesting challenges.</p>
+    <a href="contact.html" class="btn btn-fill btn-trace btn-magnetic reveal">Get in touch <i class="fas fa-arrow-right"></i></a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Emily Kuntze</p>
+    <div class="footer-links">
+      <a href="https://linkedin.com/in/emilykuntze" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:kuntzeemily@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://behance.net/emilykuntze" target="_blank"><i class="fab fa-behance"></i></a>
+    </div>
+  </footer>
+
+  <script src="js/shared.js"></script>
   <script>
-  function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('open');
-  }
+    // ─── Category filter ───
+    const filterBtns=document.querySelectorAll('.filter-btn');
+    const projCards=document.querySelectorAll('.proj-card');
 
-  // Close menu when any link is clicked
-  document.addEventListener('DOMContentLoaded', function () {
-    const links = document.querySelectorAll('#mobileMenu a');
-    const menu = document.getElementById('mobileMenu');
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('open');
+    filterBtns.forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        filterBtns.forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const cat=btn.getAttribute('data-filter');
+
+        projCards.forEach(card=>{
+          if(cat==='all'||card.getAttribute('data-cat')===cat){
+            card.style.display='flex';
+            card.style.animation='fadeUp .4s cubic-bezier(.16,1,.3,1) both';
+          }else{
+            card.style.display='none';
+          }
+        });
       });
     });
-  });
-</script>
 
-
+    // ─── Project card spotlight (desktop) ───
+    if(window.matchMedia('(pointer:fine)').matches){
+      document.querySelectorAll('.proj-card').forEach(card=>{
+        const spot=card.querySelector('.card-spotlight');
+        if(!spot)return;
+        card.addEventListener('mousemove',e=>{
+          const rect=card.getBoundingClientRect();
+          spot.style.left=(e.clientX-rect.left)+'px';
+          spot.style.top=(e.clientY-rect.top)+'px';
+        });
+      });
+    }
+  </script>
 </body>
 </html>
-

@@ -1,340 +1,205 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Emily Kuntze — web designer, CRO strategist, and digital storyteller based in Dallas, TX">
   <title>About | Emily Kuntze</title>
-  <link rel="stylesheet" href="css/aboutcustom.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />     
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/main-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="stylesheet" href="css/shared.css"><link rel="stylesheet" href="css/about.css">
+  <script>(function(){var s=localStorage.getItem('theme');var p=window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',s||p)})()</script>
 </head>
+<body>
+  <div class="noise"></div><div class="dot-grid"></div><div class="cursor-light" id="cursorLight"></div>
 
-<body class="about-page">
-  <!-- Hamburger Icon -->
-<div class="hamburger" onclick="toggleMenu()">
-  <i class="fas fa-bars"></i>
-</div>
-
-<!-- Off-Canvas Mobile Menu -->
-<nav id="mobileMenu" class="off-canvas-menu">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="projects.html">Projects</a>
-  <a href="contact.html">Contact</a>
-</nav>
-  
-<header class="navbar video-navbar">
-  <video autoplay muted loop playsinline class="nav-video">
-    <source src="assets/hero-video.mp4" type="video/mp4" />
-  </video>
-
-  <div class="nav-content">
-    <div class="nav-left">
-      <a href="index.html" class="logo">Emily Kuntze</a>
-    </div>
-
-    <nav class="nav-center">
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo"><span>Emily</span> Kuntze</a>
+    <div class="nav-center"><a href="projects.html">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
     <div class="nav-right">
-      <a href="https://linkedin.com/in/emilykuntze" target="_blank" aria-label="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a href="mailto:kuntzeemily@gmail.com" aria-label="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
-      <a href="https://behance.net/emilykuntze" target="_blank" aria-label="Behance">
-        <i class="fab fa-behance"></i>
-      </a>
+      <a href="https://linkedin.com/in/emilykuntze" target="_blank" aria-label="LinkedIn" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://behance.net/emilykuntze" target="_blank" aria-label="Behance" class="social-link"><i class="fab fa-behance"></i></a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></button>
+      <a href="contact.html" class="nav-cta btn-magnetic">Get in touch</a>
     </div>
-  </div>
+    <div class="menu-btn">
+      <button class="theme-toggle" id="themeToggleMob" aria-label="Toggle theme"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></button>
+      <button id="hamburger" style="background:none;border:none;color:var(--text-1);font-size:1.3rem;cursor:pointer" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+  <div class="mobile-overlay" id="mobileOverlay"><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
 
-
-
-</header>
-
-  <main class="about">
+  <!-- ABOUT HERO -->
   <section class="about-hero">
-    <div class="container">
-      <div class="about-content">
-        <div class="about-text">
-          <h1>Hi, I'm Emily Kuntze</h1>
-          <p>I'm a web designer and digital strategist who blends creativity with data to craft meaningful user experiences.</p>
-          <div class="buttons">
-            <a href="assets/documents/Emily-Kuntze-Resume.pdf" class="btn" download>Download Resume</a>
-            <a href="contact.html" class="btn secondary">Contact Me</a>
-          </div>
-        </div>
-        <div class="about-image">
-          <img src="assets/personal/lighting.jpg" alt="Emily Kuntze Portrait">
-        </div>
+    <div class="mesh mesh-a1"></div><div class="mesh mesh-a2"></div>
+    <div class="about-left">
+      <span class="section-eyebrow hero-enter hero-enter-d1">About Me</span>
+      <h1 class="about-title hero-enter hero-enter-d2">Hi, I'm <em>Emily.</em></h1>
+      <p class="about-bio hero-enter hero-enter-d3">I'm a web designer and digital strategist who blends creativity with data to craft experiences that look great and actually perform. Based in Dallas, TX — I thrive at the intersection of conversion optimization, brand storytelling, and measurable impact.</p>
+      <div class="about-actions hero-enter hero-enter-d4">
+        <a href="assets/documents/Emily-Kuntze-Resume.pdf" class="btn btn-fill btn-magnetic" download>Download Resume <i class="fas fa-download"></i></a>
+        <a href="contact.html" class="btn btn-ghost btn-magnetic">Contact Me</a>
+      </div>
+    </div>
+    <div class="about-right hero-enter hero-enter-d5">
+      <div class="about-photo">
+        <img src="assets/personal/lighting.jpg" alt="Emily Kuntze">
       </div>
     </div>
   </section>
 
- <!-- Scroll Reveal Baseball Cards -->
-<section class="baseball-card-grid">
-  <div class="baseball-card" data-index="0">
-    <div class="card-tilt">
-      <img src="assets/personal/photography-two.JPEG" alt="Storyteller Emily" />
-      <h3>Creative Storyteller</h3>
-      <p>Whether it’s design, video, or a podcast mic, I love turning ideas into visuals and stories that stick.</p>
+  <div class="sep"></div>
+
+  <!-- PERSONALITY CARDS -->
+  <section class="section">
+    <div class="section-header center reveal">
+      <span class="section-eyebrow">Beyond the work</span>
+      <h2 class="section-title">The human behind the pixels</h2>
     </div>
-  </div>
-
-  <div class="baseball-card" data-index="1">
-    <div class="card-tilt">
-      <img src="assets/personal/emily-latte.jpg" alt="Latte Emily" />
-      <h3>Lover of Mornings & Lattes</h3>
-      <p>Early mornings, cafés, and a latte is all i need before diving into a creative sprint.</p>
+    <div class="personality-grid stg">
+      <div class="persona-card reveal"><div class="spotlight"></div><img src="assets/personal/photography-two.JPEG" alt="Creative" class="persona-img"><h3 class="persona-name">Creative Storyteller</h3><p class="persona-desc">Whether it's design, video, or a podcast mic — I turn ideas into visuals and stories that stick.</p></div>
+      <div class="persona-card reveal"><div class="spotlight"></div><img src="assets/personal/emily-latte.jpg" alt="Mornings" class="persona-img"><h3 class="persona-name">Morning Person + Latte Lover</h3><p class="persona-desc">Early mornings, a good café, and a latte is all I need before diving into a creative sprint.</p></div>
+      <div class="persona-card reveal"><div class="spotlight"></div><img src="assets/personal/gymrat.jpg" alt="Fitness" class="persona-img"><h3 class="persona-name">Gym Rat</h3><p class="persona-desc">Movement fuels my creativity. Whether lifting or getting steps in, the gym is my reset button.</p></div>
+      <div class="persona-card reveal"><div class="spotlight"></div><img src="assets/personal/emily-dallas.JPG" alt="Friends" class="persona-img"><h3 class="persona-name">Big on Connection</h3><p class="persona-desc">Always down for a spontaneous hangout, deep conversation, or late-night laugh. My people are everything.</p></div>
+      <div class="persona-card reveal"><div class="spotlight"></div><img src="assets/personal/emily-barcelona.jpg" alt="Travel" class="persona-img"><h3 class="persona-name">Always Planning the Next Trip</h3><p class="persona-desc">Travel keeps me curious. I'm always chasing new views, good eats, and city streets to explore on foot.</p></div>
     </div>
-  </div>
+  </section>
 
-  <div class="baseball-card" data-index="2">
-    <div class="card-tilt">
-      <img src="assets/personal/gymrat.jpg" alt="Gymrat Emily" />
-      <h3>Gym-Rat with a Balanced Routine</h3>
-      <p>Movement fuels my creativity. Whether I’m lifting weights or getting steps in, the gym is my reset button.</p>
+  <div class="sep"></div>
+
+  <!-- EXPERIENCE + PHILOSOPHY -->
+  <section class="section">
+    <div class="section-header center reveal">
+      <span class="section-eyebrow">Background</span>
+      <h2 class="section-title">Experience</h2>
     </div>
-  </div>
-
-  <div class="baseball-card" data-index="3">
-    <div class="card-tilt">
-      <img src="assets/personal/emily-dallas.JPG" alt="Connected Emily" />
-      <h3>Big on Friends & Connections</h3>
-      <p>I’m always down for a spontaneous hangout, deep conversation, or late-night laugh. My people are everything.</p>
-    </div>
-  </div>
-
-  <div class="baseball-card" data-index="4">
-    <div class="card-tilt">
-      <img src="assets/personal/emily-barcelona.jpg" alt="Traveling Emily" />
-      <h3>Forever Planning My Next Trip</h3>
-      <p>Travel keeps me curious. I’m always chasing new views, good eats, and city streets to explore on foot.</p>
-    </div>
-  </div>
-</section>
-
-<div class="card-stack-spacer" style="height: 5vh;"></div>
-
-    <!-- Experience & Skills Grid -->
-    <section id="experience" class="experience-skills fade-in">
-     <div class="experience-philosophy">
-      <div class="experience">
-        <div class="timeline-item">
-          <h4>2021 – PRESENT</h4>
-          <h3>UNCOMN</h3>
-          <p>Digital Media Specialist</p>
-        </div>
-        <div class="timeline-item">
-          <h4>2021 – PRESENT</h4>
-          <h3>Freelance</h3>
-          <p>Multimedia, Website Design, and Branding Consultant</p>
-        </div>
-        <div class="timeline-item">
-          <h4>2021 – 2023</h4>
-          <h3>Webster University</h3>
-          <p>Social Media Manager</p>
-        </div>
+    <div class="exp-grid reveal">
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-year">2021 — Present</div><div class="timeline-co">UNCOMN</div><div class="timeline-role">Digital Media Specialist</div></div>
+        <div class="timeline-item"><div class="timeline-year">2021 — Present</div><div class="timeline-co">Freelance</div><div class="timeline-role">Web Design, Multimedia & Branding Consultant</div></div>
+        <div class="timeline-item"><div class="timeline-year">2021 — 2023</div><div class="timeline-co">Webster University</div><div class="timeline-role">Social Media Manager</div></div>
       </div>
-
-    <!-- Design Philosophy -->
-    <div class="philosophy">
-      <h4>DESIGN PHILOSOPHY</h4>
-      <p class="quote">“Data-driven creativity for impactful, tailored solutions”</p>
-    </div>
-  </div>
-
-<section class="skills-section">
-  <h4>Skills</h4>
-
-  <div class="skill-filters">
-    <button class="active" data-category="all">All</button>
-    <button data-category="cms">CMS</button>
-    <button data-category="web">Web Dev</button>
-    <button data-category="design">Design</button>
-    <button data-category="analytics">Analytics</button>
-    <button data-category="seo">SEO</button>
-  </div>
-
-  <div class="skills-grid">
-    <!-- CMS -->
-    <div class="skill-icon show" data-category="cms"><i class="fab fa-wordpress"></i></div>
-    <div class="skill-icon show" data-category="cms"><i class="fab fa-hubspot"></i></div>
-
-    <!-- Web Dev -->
-    <div class="skill-icon show" data-category="web"><i class="fab fa-html5"></i></div>
-    <div class="skill-icon show" data-category="web"><i class="fab fa-css3-alt"></i></div>
-    <div class="skill-icon show" data-category="web"><i class="fab fa-js"></i></div>
-    <div class="skill-icon show" data-category="web"><i class="fab fa-github"></i></div>
-    <div class="skill-icon show" data-category="web"><i class="devicon-webflow-original" title="Webflow"></i></div>
-
-    <!-- Design -->
-    <div class="skill-icon" data-category="design"><i class="devicon-figma-plain"></i></div>
-    <div class="skill-icon" data-category="design"><i class="devicon-canva-plain"></i></div>
-    <div class="skill-icon" data-category="design"><i class="devicon-dreamweaver-plain"></i></i></div>
-    <div class="skill-icon" data-category="design"><i class="devicon-illustrator-plain" title="Illustrator"></i></div>
-    <div class="skill-icon" data-category="design"><i class="devicon-photoshop-plain" title="Photoshop"></i></div>
-    <div class="skill-icon" data-category="design"><i class="devicon-premierepro-plain" title="Premiere Pro"></i></div>
-
-    <!-- Analytics -->
-   <div class="skill-icon" data-category="analytics">
-   <img src="assets/tools/ga4.svg" alt="GA4" title="Google Analytics" />
-   </div>
-   <div class="skill-icon" data-category="analytics">
-   <img src="assets/tools/tag-manager.svg" alt="GTM" title="Google Tag Manager" />
-   </div>
-   <div class="skill-icon" data-category="analytics">
-   <img src="assets/tools/looker.svg" alt="Looker Studio" title="Google Looker Studio" />
-   </div>
-   <div class="skill-icon" data-category="analytics">
-  <img src="assets/tools/pagespeedinsights.svg" alt="PageSpeed Insights" />
-   </div>
-
-    <!-- SEO -->
-    <div class="skill-icon show" data-category="seo"><i class="fab fa-linkedin"></i></div>
-   <div class="skill-icon" data-category="seo">
-   <img src="assets/tools/lighthouse.svg" alt="Lighthouse" />
-   </div>
-   <div class="skill-icon" data-category="seo">
-   <img src="assets/tools/googlesearchconsole.svg" alt="Google Search Console" />
-   </div>
-   <div class="skill-icon" data-category="seo">
-   <img src="assets/tools/semrush.svg" alt="SEMrush" />
-   </div>
-
-  </div>
-</section>
-
-    <!-- Fun Facts -->
-    <section class="fun-facts fade-in">
-      <h4>5 INSIDER FACTS</h4>
-      <div class="fun-grid">
-        <div class="fact-card"><i class="fas fa-star"></i> Reposted by NBA + NFL</div>
-        <div class="fact-card"><i class="fas fa-desktop"></i> Built My Own PC</div>
-        <div class="fact-card"><i class="fas fa-seedling"></i> Brussel Sports Enthusiast</div>
-        <div class="fact-card"><i class="fas fa-cookie-bite"></i> High-Protein Dessert Gal</div>
-        <div class="fact-card"><i class="fas fa-basketball-ball"></i> Retired College Hooper</div>
+      <div class="philosophy-card">
+        <div class="philosophy-label">Design Philosophy</div>
+        <p class="philosophy-quote">"Data-driven creativity for impactful, tailored solutions."</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CTA Button -->
-<div class="cta-button-wrapper">
-  <a href="#" class="btn secondary">Let's Get Started</a>
-</div>
-  </main>
+  <div class="sep"></div>
 
-<footer class="site-footer">
-  <p>&copy; 2025 Emily Kuntze</p>
-</footer>
+  <!-- SKILLS -->
+  <section class="section">
+    <div class="section-header center reveal">
+      <span class="section-eyebrow">Toolkit</span>
+      <h2 class="section-title">Skills & Tools</h2>
+    </div>
+    <div class="skill-filters reveal">
+      <button class="skill-btn active" data-cat="all">All</button>
+      <button class="skill-btn" data-cat="cms">CMS</button>
+      <button class="skill-btn" data-cat="web">Web Dev</button>
+      <button class="skill-btn" data-cat="design">Design</button>
+      <button class="skill-btn" data-cat="analytics">Analytics</button>
+      <button class="skill-btn" data-cat="seo">SEO</button>
+    </div>
+    <div class="skills-grid reveal">
+      <!-- CMS -->
+      <div class="skill-chip show" data-cat="cms" title="WordPress"><i class="fab fa-wordpress"></i></div>
+      <div class="skill-chip show" data-cat="cms" title="HubSpot"><i class="fab fa-hubspot"></i></div>
+      <!-- Web Dev -->
+      <div class="skill-chip show" data-cat="web" title="HTML5"><i class="fab fa-html5"></i></div>
+      <div class="skill-chip show" data-cat="web" title="CSS3"><i class="fab fa-css3-alt"></i></div>
+      <div class="skill-chip show" data-cat="web" title="JavaScript"><i class="fab fa-js"></i></div>
+      <div class="skill-chip show" data-cat="web" title="GitHub"><i class="fab fa-github"></i></div>
+      <div class="skill-chip show" data-cat="web" title="Webflow"><i class="devicon-webflow-original"></i></div>
+      <!-- Design -->
+      <div class="skill-chip show" data-cat="design" title="Figma"><i class="devicon-figma-plain"></i></div>
+      <div class="skill-chip show" data-cat="design" title="Canva"><i class="devicon-canva-plain"></i></div>
+      <div class="skill-chip show" data-cat="design" title="Illustrator"><i class="devicon-illustrator-plain"></i></div>
+      <div class="skill-chip show" data-cat="design" title="Photoshop"><i class="devicon-photoshop-plain"></i></div>
+      <div class="skill-chip show" data-cat="design" title="Premiere Pro"><i class="devicon-premierepro-plain"></i></div>
+      <!-- Analytics -->
+      <div class="skill-chip show" data-cat="analytics" title="GA4"><img src="assets/tools/ga4.svg" alt="GA4"></div>
+      <div class="skill-chip show" data-cat="analytics" title="GTM"><img src="assets/tools/tag-manager.svg" alt="GTM"></div>
+      <div class="skill-chip show" data-cat="analytics" title="Looker Studio"><img src="assets/tools/looker.svg" alt="Looker"></div>
+      <div class="skill-chip show" data-cat="analytics" title="PageSpeed"><img src="assets/tools/pagespeedinsights.svg" alt="PageSpeed"></div>
+      <!-- SEO -->
+      <div class="skill-chip show" data-cat="seo" title="Lighthouse"><img src="assets/tools/lighthouse.svg" alt="Lighthouse"></div>
+      <div class="skill-chip show" data-cat="seo" title="Search Console"><img src="assets/tools/googlesearchconsole.svg" alt="Search Console"></div>
+      <div class="skill-chip show" data-cat="seo" title="SEMrush"><img src="assets/tools/semrush.svg" alt="SEMrush"></div>
+      <div class="skill-chip show" data-cat="seo" title="LinkedIn"><i class="fab fa-linkedin"></i></div>
+    </div>
+  </section>
 
-<script>
-  gsap.registerPlugin(ScrollTrigger);
+  <div class="sep"></div>
 
-  const cards = gsap.utils.toArray(".baseball-card");
+  <!-- FUN FACTS -->
+  <section class="section">
+    <div class="section-header center reveal">
+      <span class="section-eyebrow">Did you know?</span>
+      <h2 class="section-title">5 Insider Facts</h2>
+    </div>
+    <div class="facts-grid stg">
+      <div class="fact-card reveal"><div class="fact-icon"><i class="fas fa-star"></i></div><p class="fact-text">Reposted by the NBA + NFL</p></div>
+      <div class="fact-card reveal"><div class="fact-icon"><i class="fas fa-desktop"></i></div><p class="fact-text">Built my own PC</p></div>
+      <div class="fact-card reveal"><div class="fact-icon"><i class="fas fa-seedling"></i></div><p class="fact-text">Brussels sprout enthusiast</p></div>
+      <div class="fact-card reveal"><div class="fact-icon"><i class="fas fa-cookie-bite"></i></div><p class="fact-text">High-protein dessert gal</p></div>
+      <div class="fact-card reveal"><div class="fact-icon"><i class="fas fa-basketball-ball"></i></div><p class="fact-text">Retired college hooper</p></div>
+    </div>
+  </section>
 
-  const tl = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".baseball-card-grid", // the container section
-      start: "top top",
-      end: "+=800", // total scroll distance
-      scrub: true, // ties animation progress to scroll position
-      pin: true, // keep it pinned
-      anticipatePin: 1, // allows smoother flow for fade-in below
+  <div class="sep"></div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="mesh" style="width:600px;height:600px;background:var(--mesh-1);top:50%;left:50%;transform:translate(-50%,-50%);filter:blur(150px)"></div>
+    <h2 class="cta-title reveal">Ready to work together? <em>Let's go.</em></h2>
+    <p class="cta-sub reveal">I'm currently open to freelance projects and full-time opportunities.</p>
+    <a href="contact.html" class="btn btn-fill btn-trace btn-magnetic reveal">Get in touch <i class="fas fa-arrow-right"></i></a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Emily Kuntze</p>
+    <div class="footer-links">
+      <a href="https://linkedin.com/in/emilykuntze" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:kuntzeemily@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://behance.net/emilykuntze" target="_blank"><i class="fab fa-behance"></i></a>
+    </div>
+  </footer>
+
+  <script src="js/shared.js"></script>
+  <script>
+    // Skill filters
+    const skillBtns=document.querySelectorAll('.skill-btn');
+    const skillChips=document.querySelectorAll('.skill-chip');
+    skillBtns.forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        skillBtns.forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const cat=btn.getAttribute('data-cat');
+        skillChips.forEach(chip=>{
+          if(cat==='all'||chip.getAttribute('data-cat')===cat){chip.classList.add('show')}
+          else{chip.classList.remove('show')}
+        });
+      });
+    });
+
+    // Personality card spotlights
+    if(window.matchMedia('(pointer:fine)').matches){
+      document.querySelectorAll('.persona-card').forEach(card=>{
+        const spot=card.querySelector('.spotlight');
+        if(!spot)return;
+        card.addEventListener('mousemove',e=>{
+          const rect=card.getBoundingClientRect();
+          spot.style.left=(e.clientX-rect.left)+'px';
+          spot.style.top=(e.clientY-rect.top)+'px';
+        });
+      });
     }
-  });
-
-  cards.forEach((card, i) => {
-    tl.fromTo(card,
-      { opacity: 0, y: 80 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.5,
-        ease: "power2.out"
-      },
-      i * 0.8 // stagger the card entries by scroll distance
-    );
-  });
-</script>
-
-<script>
-  // Restore existing fade-in animations
-  const fadeElements = document.querySelectorAll('.fade-in');
-
-  const fadeObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        fadeObserver.unobserve(entry.target); // this matches the correct variable
-      }
-    });
-  }, { threshold: 0.2 });
-
-  fadeElements.forEach(el => fadeObserver.observe(el));
-</script>
-
-
-<script>
-  const experienceSection = document.querySelector("#experience");
-
-  const expObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        experienceSection.classList.add("visible");
-      }
-    });
-  }, { threshold: 0.2 });
-
-  expObserver.observe(experienceSection);
-</script>
-
-<script>
-  const filterButtons = document.querySelectorAll('.skill-filters button');
-  const skillIcons = document.querySelectorAll('.skill-icon');
-
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const category = btn.getAttribute('data-category');
-
-      skillIcons.forEach(icon => {
-        if (category === 'all' || icon.getAttribute('data-category') === category) {
-          icon.classList.add('show');
-        } else {
-          icon.classList.remove('show');
-        }
-      });
-    });
-  });
-
-  // Show all by default
-  document.querySelector('[data-category="all"]').click();
-</script>
-<script>
-  function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('open');
-  }
-
-  // Close menu when any link is clicked
-  document.addEventListener('DOMContentLoaded', function () {
-    const links = document.querySelectorAll('#mobileMenu a');
-    const menu = document.getElementById('mobileMenu');
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('open');
-      });
-    });
-  });
-</script>
-
+  </script>
 </body>
 </html>

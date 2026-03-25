@@ -1,119 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contact Emily Kuntze" />
-  <title>Contact Me | Emily Kuntze</title>
-  <link rel="stylesheet" href="css/contact.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Emily Kuntze — web designer and CRO strategist based in Dallas, TX">
+  <title>Contact | Emily Kuntze</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/main-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/shared.css"><link rel="stylesheet" href="css/contact.css">
+  <script>(function(){var s=localStorage.getItem('theme');var p=window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',s||p)})()</script>
 </head>
+<body>
+  <div class="noise"></div><div class="dot-grid"></div><div class="cursor-light" id="cursorLight"></div>
 
-
-<body class="fade-in">
-<!-- Hamburger Icon -->
-<div class="hamburger" onclick="toggleMenu()">
-  <i class="fas fa-bars"></i>
-</div>
-
-<!-- Off-Canvas Mobile Menu -->
-<nav id="mobileMenu" class="off-canvas-menu">
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="projects.html">Projects</a>
-  <a href="contact.html">Contact</a>
-</nav>
-  
-  <header class="navbar video-navbar">
-    <video autoplay muted loop playsinline class="nav-video">
-      <source src="assets/hero-video.mp4" type="video/mp4" />
-    </video>
-
-    <div class="nav-content">
-      <div class="nav-left">
-        <a href="index.html" class="logo">Emily Kuntze</a>
-      </div>
-
-      <nav class="nav-center">
-        <a href="index.html">Home</a>
-        <a href="projects.html">Projects</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-
-      <div class="nav-right">
-        <a href="https://linkedin.com/in/emilykuntze" target="_blank" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="mailto:kuntzeemily@gmail.com" aria-label="Email">
-          <i class="fas fa-envelope"></i>
-        </a>
-        <a href="https://behance.net/emilykuntze" target="_blank" aria-label="Behance">
-          <i class="fab fa-behance"></i>
-        </a>
-      </div>
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo"><span>Emily</span> Kuntze</a>
+    <div class="nav-center"><a href="projects.html">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+    <div class="nav-right">
+      <a href="https://linkedin.com/in/emilykuntze" target="_blank" aria-label="LinkedIn" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://behance.net/emilykuntze" target="_blank" aria-label="Behance" class="social-link"><i class="fab fa-behance"></i></a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></button>
+      <a href="contact.html" class="nav-cta btn-magnetic">Get in touch</a>
     </div>
-  </header>
+    <div class="menu-btn">
+      <button class="theme-toggle" id="themeToggleMob" aria-label="Toggle theme"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></button>
+      <button id="hamburger" style="background:none;border:none;color:var(--text-1);font-size:1.3rem;cursor:pointer" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+  <div class="mobile-overlay" id="mobileOverlay"><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
 
-<main class="contact-page hybrid-gallery">
-  <div class="project-card contact-card">
-    <form class="contact-form" action="https://formspree.io/f/xwpoengd" method="POST">
-      <h2>Let’s Connect</h2>
-      <p class="contact-subtext">Have a project in mind or just want to chat? Reach out below.</p>
+  <!-- CONTACT HERO -->
+  <section class="contact-hero">
+    <div class="mesh mesh-ch1"></div><div class="mesh mesh-ch2"></div>
+    <h1 class="contact-hero-title hero-enter hero-enter-d1">Let's <em>connect.</em></h1>
+    <p class="contact-hero-desc hero-enter hero-enter-d2">Have a project in mind, want to collaborate, or just want to say hi? I'd love to hear from you.</p>
+  </section>
 
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
+  <div class="sep"></div>
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+  <!-- CONTACT GRID -->
+  <section class="section">
+    <div class="contact-grid">
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="6" required></textarea>
+      <!-- Form -->
+      <div class="form-card reveal">
+        <div class="spotlight"></div>
+        <form action="https://formspree.io/f/xwpoengd" method="POST">
+          <div class="form-group">
+            <label class="form-label" for="name">Name</label>
+            <input class="form-input" type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="you@company.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Message</label>
+            <textarea class="form-textarea" id="message" name="message" placeholder="Tell me about your project, timeline, and budget..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit btn-magnetic">Send Message <i class="fas fa-arrow-right" style="margin-left:.4rem;font-size:.75rem"></i></button>
+        </form>
+      </div>
 
-      <button type="submit" class="cta-button">Send Message</button>
-    </form>
-  </div>
+      <!-- Info -->
+      <div class="info-card reveal">
+        <div class="info-block">
+          <div class="info-block-label">Email</div>
+          <div class="info-block-value"><a href="mailto:kuntzeemily@gmail.com">kuntzeemily@gmail.com</a></div>
+        </div>
 
-  <div class="contact-info-icons">
-    <p><strong>Email:</strong> kuntzeemily@gmail.com</p>
-    <p><strong>Location:</strong> Dallas, TX (Remote-Friendly)</p>
-    <div class="social-icons">
+        <div class="info-block">
+          <div class="info-block-label">Location</div>
+          <div class="info-block-value">Dallas, TX<br><span style="font-size:.8rem;color:var(--text-3)">Remote-friendly</span></div>
+        </div>
+
+        <div class="info-block">
+          <div class="info-block-label">Connect</div>
+          <div class="info-socials">
+            <a href="https://linkedin.com/in/emilykuntze" target="_blank" class="info-social" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="mailto:kuntzeemily@gmail.com" class="info-social" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://behance.net/emilykuntze" target="_blank" class="info-social" aria-label="Behance"><i class="fab fa-behance"></i></a>
+          </div>
+          <div class="avail-badge"><span class="pulse-dot"></span> Available for projects</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Emily Kuntze</p>
+    <div class="footer-links">
       <a href="https://linkedin.com/in/emilykuntze" target="_blank"><i class="fab fa-linkedin-in"></i></a>
       <a href="mailto:kuntzeemily@gmail.com"><i class="fas fa-envelope"></i></a>
       <a href="https://behance.net/emilykuntze" target="_blank"><i class="fab fa-behance"></i></a>
     </div>
-  </div>
-</main>
+  </footer>
 
-  <footer class="site-footer">
-  <p>&copy; 2025 Emily Kuntze</p>
-</footer>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    document.body.classList.add('fade-in');
-  });
-</script>
-
+  <script src="js/shared.js"></script>
   <script>
-  function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('open');
-  }
-
-  // Close menu when any link is clicked
-  document.addEventListener('DOMContentLoaded', function () {
-    const links = document.querySelectorAll('#mobileMenu a');
-    const menu = document.getElementById('mobileMenu');
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('open');
-      });
-    });
-  });
-</script>
-
+    // Form card spotlight
+    if(window.matchMedia('(pointer:fine)').matches){
+      const fc=document.querySelector('.form-card');
+      const sp=fc?.querySelector('.spotlight');
+      if(fc&&sp){
+        fc.addEventListener('mousemove',e=>{
+          const r=fc.getBoundingClientRect();
+          sp.style.left=(e.clientX-r.left)+'px';
+          sp.style.top=(e.clientY-r.top)+'px';
+        });
+      }
+    }
+  </script>
 </body>
-
-
+</html>

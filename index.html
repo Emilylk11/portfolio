@@ -1,129 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <!-- Open Graph meta tags for link sharing -->
-<meta property="og:title" content="Emily Kuntze | Portfolio" />
-<meta property="og:description" content="Designing with purpose. Marketing with data. Telling stories that convert." />
-<meta property="og:image" content="https://emilylk11.github.io/portfolio/assets/main-thumbnail.png" />
-<meta property="og:url" content="https://emilylk11.github.io/portfolio/" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Emily Kuntze | Portfolio" />
-<meta name="twitter:description" content="Designing with purpose. Marketing with data. Telling stories that convert." />
-<meta name="twitter:image" content="https://emilylk11.github.io/portfolio/assets/personal/lighting.jpg" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Emily Kuntze | Portfolio" />
+  <meta property="og:title" content="Emily Kuntze | Portfolio" />
+  <meta property="og:description" content="Designing with purpose. Marketing with data. Telling stories that convert." />
+  <meta property="og:image" content="https://emilylk11.github.io/portfolio/assets/main-thumbnail.png" />
+  <meta property="og:url" content="https://emilylk11.github.io/portfolio/" />
   <title>Emily Kuntze | Portfolio</title>
-  <link rel="icon" type="image/png" sizes="32x32" href="https://emilylk11.github.io/portfolio/assets/main-icon.png">
-  <link rel="stylesheet" href="css/styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/main-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/shared.css">
+  <link rel="stylesheet" href="css/home.css">
+  <script>(function(){var s=localStorage.getItem('theme');var p=window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',s||p)})()</script>
 </head>
+<body>
+  <div class="noise"></div>
+  <div class="dot-grid"></div>
+  <div class="cursor-light" id="cursorLight"></div>
 
-  <main>
-  <body class="home-page">
-  <header class="hero">
-    <!-- Background video -->
-    <video autoplay muted loop playsinline class="bg-video">
-      <source src="assets/hero-video.mp4" type="video/mp4" />
-    </video>
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo"><span>Emily</span> Kuntze</a>
+    <div class="nav-center"><a href="projects.html">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+    <div class="nav-right">
+      <a href="https://linkedin.com/in/emilykuntze" target="_blank" aria-label="LinkedIn" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://behance.net/emilykuntze" target="_blank" aria-label="Behance" class="social-link"><i class="fab fa-behance"></i></a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></button>
+      <a href="contact.html" class="nav-cta btn-magnetic">Get in touch</a>
+    </div>
+    <div class="menu-btn">
+      <button class="theme-toggle" id="themeToggleMob" aria-label="Toggle theme"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></button>
+      <button id="hamburger" style="background:none;border:none;color:var(--text-1);font-size:1.3rem;cursor:pointer" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+  <div class="mobile-overlay" id="mobileOverlay"><a href="index.html">Home</a><a href="projects.html">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
 
-    <!-- Fixed Transparent Navbar -->
-    <nav class="navbar video-navbar">
-      <div class="nav-content">
-        <div class="nav-left">
-          <a href="#" class="logo">Emily Kuntze</a>
-        </div>
-
-
-        <div class="nav-center">
-          <a href="projects.html">Projects</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
-        </div>
-
-      <div class="nav-right">
-        <a href="https://linkedin.com/in/emilykuntze" target="_blank" aria-label="LinkedIn">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-        <a href="mailto:kuntzeemily@gmail.com" aria-label="Email">
-          <i class="fas fa-envelope"></i>
-        </a>
-        <a href="https://behance.net/emilykuntze" target="_blank" aria-label="Behance">
-          <i class="fab fa-behance"></i>
-        </a>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="mesh mesh-1"></div><div class="mesh mesh-2"></div><div class="mesh mesh-3"></div>
+    <div class="hero-left">
+      <div class="hero-eyebrow hero-enter hero-enter-d1"><span class="pulse-dot"></span> Available for new projects</div>
+      <h1 class="hero-title hero-enter hero-enter-d2">Design that<br><em>converts.</em></h1>
+      <p class="hero-desc hero-enter hero-enter-d3">I blend creative storytelling with data-driven strategy to build digital experiences that move people — and metrics.</p>
+      <div class="hero-actions hero-enter hero-enter-d4">
+        <a href="projects.html" class="btn btn-fill btn-magnetic">View projects <i class="fas fa-arrow-right"></i></a>
+        <a href="contact.html" class="btn btn-ghost btn-magnetic">Let's talk</a>
       </div>
-      </div>
-            <!-- Mobile menu icon -->
-  <div class="hamburger" onclick="toggleMenu()">
-    <i class="fas fa-bars"></i>
-  </div>
- </nav>
-
-    <!-- Hero Text -->
-    <div class="hero-content">
-      <h1>Emily Kuntze</h1>
-      <p>Designing with purpose. Marketing with data. Telling stories that convert.</p>
-      <span class="skills">UX/UI • Analytics • Branding • Web Design</span>
-      <div class="hero-button-container">
-        <a class="cta-button" href="projects.html">Enter My Paradise</a>
+      <div class="hero-metrics hero-enter hero-enter-d5">
+        <div class="metric"><div class="metric-value"><span class="num" data-target="42">0</span><span>%</span></div><div class="metric-label">Traffic growth</div></div>
+        <div class="metric"><div class="metric-value"><span class="num" data-target="17">0</span><span>%</span></div><div class="metric-label">More conversions</div></div>
+        <div class="metric"><div class="metric-value"><span class="num" data-target="36">0</span><span>%</span></div><div class="metric-label">Speed improvement</div></div>
       </div>
     </div>
-  </header>
-    
-  <!-- Mobile menu links -->
-  <div id="mobileMenu" class="off-canvas-menu">
-    <a href="index.html">Home</a>
-    <a href="projects.html">Projects</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </div>
-  </main>
-    
-<footer class="site-footer">
-  <p>&copy; 2025 Emily Kuntze</p>
-</footer>
+    <div class="hero-right hero-enter hero-enter-d6">
+      <div class="hero-visual">
+        <img src="assets/hero-closet.png" alt="Emily's Creative Closet" class="hero-closet-img">
+        <div class="visual-frame"><div class="visual-inner">
+          <div class="vis-blob vis-blob--1"></div><div class="vis-blob vis-blob--2"></div><div class="vis-blob vis-blob--3"></div>
+          <span class="vis-label">Your 3D closet goes here</span><span class="vis-sub">Drop image in assets/hero-closet.png</span>
+        </div></div>
+      </div>
+    </div>
+    <div class="scroll-cue hero-enter hero-enter-d6"><div class="scroll-cue-line"></div></div>
+  </section>
 
-  <script>
-    // Page fade-in effect
-    document.addEventListener('DOMContentLoaded', () => {
-      document.body.classList.add('fade-in');
-    });
+  <div class="sep"></div>
 
-    // Page fade-out effect on navigation
-    document.querySelectorAll('a[href]').forEach(link => {
-      const href = link.getAttribute('href');
-      if (!href.startsWith('#') && !href.startsWith('http')) {
-        link.addEventListener('click', function (e) {
-          e.preventDefault();
-          document.body.classList.remove('fade-in');
-          document.body.style.opacity = 0;
-          setTimeout(() => {
-            window.location.href = href;
-          }, 400);
-        });
-      }
-    });
-  </script>
+  <!-- PROJECTS -->
+  <section class="section projects-section" id="projects">
+    <div class="mesh mesh-p1"></div><div class="mesh mesh-p2"></div>
+    <div class="section-header center reveal"><span class="section-eyebrow">Selected work</span><h2 class="section-title">Projects</h2><p class="section-subtitle">Strategy-led creative work bridging design, data, and digital experiences.</p></div>
+    <div class="projects-grid stg">
+      <a href="project-uncomn.html" class="p-card reveal"><div class="p-card-thumb"><img src="assets/thumbnails/uncomn-thumbnail.jpg" alt="UNCOMN" loading="lazy"></div><div class="p-card-tags"><span>UX Design</span><span>Analytics</span></div><h3 class="p-card-name">Conversion-Focused Redesign</h3><p class="p-card-desc">Full UX overhaul driving 42% organic traffic growth and 22% lower bounce rate.</p><span class="p-card-link">View project <i class="fas fa-arrow-right"></i></span></a>
+      <a href="project-onderlaw.html" class="p-card reveal"><div class="p-card-thumb"><img src="assets/thumbnails/onderlaw-thumbnail.jpg" alt="OnderLaw" loading="lazy"></div><div class="p-card-tags"><span>Branding</span><span>Identity</span></div><h3 class="p-card-name">OnderLaw Brand Refresh</h3><p class="p-card-desc">Modern identity honoring legacy while emotionally connecting with new clients.</p><span class="p-card-link">View project <i class="fas fa-arrow-right"></i></span></a>
+      <a href="project-faithflow.html" class="p-card reveal"><div class="p-card-thumb"><img src="assets/thumbnails/faithflow-thumbnail.jpg" alt="FaithFlow" loading="lazy"></div><div class="p-card-tags"><span>App UI</span><span>Campaign</span></div><h3 class="p-card-name">FaithFlow Brand + Launch</h3><p class="p-card-desc">Full visual identity and marketing rollout for a Gen Z prayer journaling app.</p><span class="p-card-link">View project <i class="fas fa-arrow-right"></i></span></a>
+      <a href="project-uncomnsocialmedia.html" class="p-card reveal"><div class="p-card-thumb"><img src="assets/thumbnails/uncomnsocialstrategy-thumbnail.jpg" alt="Social Strategy" loading="lazy"></div><div class="p-card-tags"><span>Strategy</span><span>Content</span></div><h3 class="p-card-name">Social Media Strategy</h3><p class="p-card-desc">Quarterly campaign system with calendars, templates, and KPI dashboards.</p><span class="p-card-link">View project <i class="fas fa-arrow-right"></i></span></a>
+      <a href="project-seo-optimization.html" class="p-card reveal"><div class="p-card-thumb"><img src="assets/thumbnails/uncomnseoweb-thumbnail.jpg" alt="SEO" loading="lazy"></div><div class="p-card-tags"><span>SEO</span><span>Performance</span></div><h3 class="p-card-name">SEO + Web Optimization</h3><p class="p-card-desc">Audit and implementation driving 28% traffic growth and 36% speed boost.</p><span class="p-card-link">View project <i class="fas fa-arrow-right"></i></span></a>
+      <a href="project-herodesigns.html" class="p-card reveal"><div class="p-card-thumb"><img src="assets/thumbnails/herodesigns-thumbnail.jpg" alt="Hero Designs" loading="lazy"></div><div class="p-card-tags"><span>Hero Design</span><span>UX/UI</span></div><h3 class="p-card-name">Hero Section Showcase</h3><p class="p-card-desc">Bold first impressions with scroll-based engagement and conversion-focused CTAs.</p><span class="p-card-link">View project <i class="fas fa-arrow-right"></i></span></a>
+    </div>
+  </section>
 
-  <script>
-// NAV MENU: Toggle & Auto-Close on Click
-function toggleMenu() {
-  const menu = document.getElementById("mobileMenu");
-  menu.classList.toggle("open");
-}
+  <div class="sep"></div>
 
-// Close menu when a link is clicked
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll("#mobileMenu a").forEach((link) => {
-    link.addEventListener("click", () => {
-      document.getElementById("mobileMenu").classList.remove("open");
-    });
-  });
-});
-</script>
+  <!-- CAPABILITIES -->
+  <section class="section cap-section">
+    <div class="mesh mesh-c1"></div>
+    <div class="section-header center reveal"><span class="section-eyebrow">Capabilities</span><h2 class="section-title">What I do</h2></div>
+    <div class="cap-grid stg">
+      <div class="cap-card reveal"><div class="spotlight"></div><div class="cap-icon"><i class="fas fa-chart-line"></i></div><h3 class="cap-title">Conversion Optimization</h3><p class="cap-desc">A/B testing, funnel analysis, and landing page strategy that lifts CVR, AOV, and ROAS.</p></div>
+      <div class="cap-card reveal"><div class="spotlight"></div><div class="cap-icon"><i class="fas fa-pen-ruler"></i></div><h3 class="cap-title">Web & UX Design</h3><p class="cap-desc">High-converting pages in Elementor, Webflow, and custom code with responsive best practices.</p></div>
+      <div class="cap-card reveal"><div class="spotlight"></div><div class="cap-icon"><i class="fas fa-bullseye"></i></div><h3 class="cap-title">Analytics & Tracking</h3><p class="cap-desc">GA4, GTM, VWO implementation with consent-mode compliance and reporting dashboards.</p></div>
+      <div class="cap-card reveal"><div class="spotlight"></div><div class="cap-icon"><i class="fas fa-palette"></i></div><h3 class="cap-title">Brand Identity</h3><p class="cap-desc">Visual identity systems from logo to launch — cohesive design that audiences remember.</p></div>
+      <div class="cap-card reveal"><div class="spotlight"></div><div class="cap-icon"><i class="fas fa-rocket"></i></div><h3 class="cap-title">Funnel Strategy</h3><p class="cap-desc">End-to-end funnel architecture from ad click to checkout, optimized for upsell take rate and LTV.</p></div>
+      <div class="cap-card reveal"><div class="spotlight"></div><div class="cap-icon"><i class="fas fa-film"></i></div><h3 class="cap-title">Content & Creative</h3><p class="cap-desc">Campaign storytelling across social, email, and landing pages — designed to engage and convert.</p></div>
+    </div>
+  </section>
 
-  
+  <div class="sep"></div>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="mesh mesh-cta"></div><div class="mesh mesh-cta2"></div>
+    <h2 class="cta-title reveal">Let's build something <em>together.</em></h2>
+    <p class="cta-sub reveal">Based in Dallas, TX — open to remote and relocation.</p>
+    <a href="contact.html" class="btn btn-fill btn-trace btn-magnetic reveal">Get in touch <i class="fas fa-arrow-right"></i></a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Emily Kuntze</p>
+    <div class="footer-links">
+      <a href="https://linkedin.com/in/emilykuntze" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:kuntzeemily@gmail.com"><i class="fas fa-envelope"></i></a>
+      <a href="https://behance.net/emilykuntze" target="_blank"><i class="fab fa-behance"></i></a>
+    </div>
+  </footer>
+  <script src="js/shared.js"></script>
 </body>
 </html>
-
