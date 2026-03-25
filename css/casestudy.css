@@ -51,7 +51,7 @@
 
 /* Before / After toggle */
 .ba-toggle-section{padding-bottom:5rem;margin-bottom:0}
-.ba-container{position:relative;max-width:700px;margin:0 auto;border-radius:16px;overflow:hidden;border:1px solid var(--border)}
+.ba-container{position:relative;max-width:700px;margin:1.5rem auto 0;border-radius:16px;overflow:hidden;border:1px solid var(--border)}
 .ba-img{width:100%;display:block;border-radius:16px}
 .ba-img.hidden{display:none}
 .ba-controls{display:flex;justify-content:center;gap:.5rem;margin-top:1.25rem;padding-bottom:.5rem}
