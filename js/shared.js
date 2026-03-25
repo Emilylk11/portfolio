@@ -76,6 +76,14 @@ document.addEventListener('DOMContentLoaded',()=>{
   });
 });
 
+// Fix: restore opacity on back/forward navigation (bfcache)
+window.addEventListener('pageshow',e=>{
+  if(e.persisted){
+    document.body.style.opacity='1';
+    document.body.style.transition='opacity .35s';
+  }
+});
+
 // ═══════════════════════════════════════════
 // INTERACTIVE ENHANCEMENTS (desktop only)
 // ═══════════════════════════════════════════
