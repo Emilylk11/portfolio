@@ -14,7 +14,7 @@
 .proj-meta-value{font-size:.85rem;font-weight:500;color:var(--text-1)}
 
 /* Case body */
-.case-body{max-width:900px;margin:0 auto;padding:0 3rem}
+.case-body{max-width:900px;margin:0 auto;padding:0 3rem;display:flex;flex-direction:column;gap:0}
 
 /* Text blocks */
 .case-block{margin-bottom:3.5rem}
@@ -50,7 +50,7 @@
 @keyframes toolsScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* Before / After toggle */
-.ba-toggle-section{margin-bottom:5rem;padding-bottom:1.5rem}
+.ba-toggle-section{padding-bottom:5rem;margin-bottom:0}
 .ba-container{position:relative;max-width:700px;margin:0 auto;border-radius:16px;overflow:hidden;border:1px solid var(--border)}
 .ba-img{width:100%;display:block;border-radius:16px}
 .ba-img.hidden{display:none}
@@ -111,7 +111,7 @@
 }
 @media(max-width:768px){
   .proj-hero{padding:7rem 1.5rem 3rem}
-  .case-body{padding:0 1.5rem}
+  .case-body{padding:0 1.5rem;display:flex;flex-direction:column}
   .process-grid{grid-template-columns:1fr}
   .results-grid{grid-template-columns:repeat(2,1fr)}
   .next-proj{flex-direction:column;text-align:center;padding:2rem}
