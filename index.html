@@ -14,14 +14,14 @@
 <body>
 
   <!-- NAV -->
-  <nav class="nav">
+  <nav class="nav" id="mainNav">
     <div class="nav-inner">
-      <a href="#" class="nav-logo">EK</a>
-      <div class="nav-center">
-        <a href="#work">Work</a>
-        <a href="#hustles">Side Projects</a>
-        <a href="#life">Life</a>
-        <a href="#contact">Contact</a>
+      <a href="#hero" class="nav-logo">EK</a>
+      <div class="nav-center" id="navLinks">
+        <a href="#work" data-section="work">Work</a>
+        <a href="#hustles" data-section="hustles">Side Projects</a>
+        <a href="#life" data-section="life">Life</a>
+        <a href="#contact" data-section="contact">Contact</a>
       </div>
       <div class="nav-right">
         <a href="https://linkedin.com/in/emilykuntze" target="_blank" class="nav-social" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -34,22 +34,31 @@
 
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobileMenu">
-    <a href="#work" onclick="closeMenu()">Work</a>
-    <a href="#hustles" onclick="closeMenu()">Side Projects</a>
-    <a href="#life" onclick="closeMenu()">Life</a>
-    <a href="#contact" onclick="closeMenu()">Contact</a>
+    <a href="#work">Work</a>
+    <a href="#hustles">Side Projects</a>
+    <a href="#life">Life</a>
+    <a href="#contact">Contact</a>
   </div>
 
   <!-- HERO -->
   <section class="hero" id="hero">
+    <!-- Photo bubbles with hover flip -->
     <div class="hero-bubbles hero-enter hero-enter-d1">
       <div class="bubble">
-        <img src="assets/personal/lighting.jpg" alt="Emily">
-        <div><div class="bubble-text">Hey, I am</div><div class="bubble-name">Emily</div></div>
+        <img src="assets/personal/lighting.jpg" alt="Emily" class="bubble-img-front">
+        <img src="assets/personal/emily-latte.jpg" alt="Em" class="bubble-img-back" style="position:absolute;left:.4rem;opacity:0;transition:opacity .35s">
+        <div class="bubble-content">
+          <div class="bubble-front"><div class="bubble-small">Hey, I am</div><div class="bubble-big">Emily</div></div>
+          <div class="bubble-back"><div class="bubble-small">You can call me</div><div class="bubble-big">Em</div></div>
+        </div>
       </div>
       <div class="bubble">
-        <img src="assets/personal/emily-dallas.JPG" alt="Dallas">
-        <div><div class="bubble-text">Currently based in</div><div class="bubble-name">Dallas, TX</div></div>
+        <img src="assets/personal/emily-dallas.JPG" alt="Dallas" class="bubble-img-front">
+        <img src="assets/personal/emily-barcelona.jpg" alt="Tulsa" class="bubble-img-back" style="position:absolute;left:.4rem;opacity:0;transition:opacity .35s">
+        <div class="bubble-content">
+          <div class="bubble-front"><div class="bubble-small">Currently based in</div><div class="bubble-big">Dallas, TX</div></div>
+          <div class="bubble-back"><div class="bubble-small">Moving to</div><div class="bubble-big">Tulsa, OK</div></div>
+        </div>
       </div>
     </div>
 
@@ -59,17 +68,35 @@
       <span class="bold">Strategist</span>
     </h1>
 
-    <p class="hero-tagline hero-enter hero-enter-d3">Building digital experiences that move metrics — and people</p>
+    <p class="hero-tagline hero-enter hero-enter-d3">Building digital experiences that move metrics <span class="icon-inline">📊</span> — and people <span class="icon-inline">💡</span></p>
   </section>
 
-  <!-- WAVE DIVIDER -->
+  <!-- MOUNTAIN WAVE DIVIDER -->
   <div class="wave-divider">
-    <svg viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,120 L0,120 Z"/>
+    <svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" style="fill:var(--bg-alt)">
+      <path d="M0,80 L30,75 L60,78 L90,65 L120,70 L150,55 L180,60 L210,45 L240,50 L270,35 L300,42 L330,30 L360,38 L390,25 L420,32 L450,20 L480,28 L510,22 L540,30 L570,18 L600,25 L630,15 L660,22 L690,28 L720,20 L750,30 L780,25 L810,35 L840,28 L870,38 L900,32 L930,42 L960,35 L990,45 L1020,38 L1050,48 L1080,42 L1110,50 L1140,44 L1170,55 L1200,48 L1230,58 L1260,52 L1290,62 L1320,55 L1350,65 L1380,60 L1410,70 L1440,65 L1440,100 L0,100 Z"/>
     </svg>
   </div>
 
-  <!-- MARQUEE TICKER -->
+  <!-- TEXT MARQUEE -->
+  <div class="text-marquee">
+    <div class="text-marquee-track">
+      <span>✦ designing pages that convert</span>
+      <span>✦ optimizing funnels end-to-end</span>
+      <span>✦ building brands that stick</span>
+      <span>✦ data-driven creative strategy</span>
+      <span>✦ GA4 · GTM · VWO · A/B testing</span>
+      <span>✦ CRO · landing pages · UX</span>
+      <span>✦ designing pages that convert</span>
+      <span>✦ optimizing funnels end-to-end</span>
+      <span>✦ building brands that stick</span>
+      <span>✦ data-driven creative strategy</span>
+      <span>✦ GA4 · GTM · VWO · A/B testing</span>
+      <span>✦ CRO · landing pages · UX</span>
+    </div>
+  </div>
+
+  <!-- TOOL MARQUEE -->
   <div class="marquee-section">
     <div class="marquee-track">
       <img src="assets/tools/figma.svg" alt="Figma" title="Figma">
@@ -86,21 +113,12 @@
       <i class="fab fa-github" title="GitHub"></i>
       <img src="assets/tools/googlesearchconsole.svg" alt="Search Console" title="Search Console">
       <img src="assets/tools/elementor.svg" alt="Elementor" title="Elementor">
-      <!-- duplicate for seamless loop -->
-      <img src="assets/tools/figma.svg" alt="Figma">
-      <img src="assets/tools/ga4.svg" alt="GA4">
-      <img src="assets/tools/gtm.svg" alt="GTM">
-      <i class="fab fa-html5"></i>
-      <i class="fab fa-css3-alt"></i>
-      <i class="fab fa-js"></i>
-      <img src="assets/tools/photoshop.svg" alt="Photoshop">
-      <img src="assets/tools/adobeillustrator.svg" alt="Illustrator">
-      <img src="assets/tools/lighthouse.svg" alt="Lighthouse">
-      <img src="assets/tools/looker.svg" alt="Looker Studio">
-      <i class="fab fa-wordpress"></i>
-      <i class="fab fa-github"></i>
-      <img src="assets/tools/googlesearchconsole.svg" alt="Search Console">
-      <img src="assets/tools/elementor.svg" alt="Elementor">
+      <img src="assets/tools/figma.svg" alt="Figma"><img src="assets/tools/ga4.svg" alt="GA4"><img src="assets/tools/gtm.svg" alt="GTM">
+      <i class="fab fa-html5"></i><i class="fab fa-css3-alt"></i><i class="fab fa-js"></i>
+      <img src="assets/tools/photoshop.svg" alt="Photoshop"><img src="assets/tools/adobeillustrator.svg" alt="Illustrator">
+      <img src="assets/tools/lighthouse.svg" alt="Lighthouse"><img src="assets/tools/looker.svg" alt="Looker Studio">
+      <i class="fab fa-wordpress"></i><i class="fab fa-github"></i>
+      <img src="assets/tools/googlesearchconsole.svg" alt="Search Console"><img src="assets/tools/elementor.svg" alt="Elementor">
     </div>
   </div>
 
@@ -110,8 +128,11 @@
     <h2 class="section-heading reveal">Case Studies</h2>
 
     <div class="work-grid stg">
-      <a href="project-uncomn.html" class="work-card reveal">
-        <img src="assets/thumbnails/uncomn-thumbnail.jpg" alt="UNCOMN" class="work-card-img">
+      <a href="project-uncomn.html" class="work-card reveal" data-tilt>
+        <div class="work-card-img-wrap">
+          <img src="assets/thumbnails/uncomn-thumbnail.jpg" alt="UNCOMN" class="work-card-img">
+          <span class="work-card-badge">Read Case Study <i class="fas fa-arrow-right"></i></span>
+        </div>
         <div class="work-card-body">
           <div class="work-card-tags"><span>UX Design</span><span>Analytics</span><span>Web Redesign</span></div>
           <h3 class="work-card-title">Conversion-Focused Redesign</h3>
@@ -120,8 +141,11 @@
         </div>
       </a>
 
-      <a href="project-onderlaw.html" class="work-card reveal">
-        <img src="assets/thumbnails/onderlaw-thumbnail.jpg" alt="OnderLaw" class="work-card-img">
+      <a href="project-onderlaw.html" class="work-card reveal" data-tilt>
+        <div class="work-card-img-wrap">
+          <img src="assets/thumbnails/onderlaw-thumbnail.jpg" alt="OnderLaw" class="work-card-img">
+          <span class="work-card-badge">Read Case Study <i class="fas fa-arrow-right"></i></span>
+        </div>
         <div class="work-card-body">
           <div class="work-card-tags"><span>Branding</span><span>Identity</span></div>
           <h3 class="work-card-title">OnderLaw Brand Refresh</h3>
@@ -130,8 +154,11 @@
         </div>
       </a>
 
-      <a href="project-faithflow.html" class="work-card reveal">
-        <img src="assets/thumbnails/faithflow-thumbnail.jpg" alt="FaithFlow" class="work-card-img">
+      <a href="project-faithflow.html" class="work-card reveal" data-tilt>
+        <div class="work-card-img-wrap">
+          <img src="assets/thumbnails/faithflow-thumbnail.jpg" alt="FaithFlow" class="work-card-img">
+          <span class="work-card-badge">Read Case Study <i class="fas fa-arrow-right"></i></span>
+        </div>
         <div class="work-card-body">
           <div class="work-card-tags"><span>App UI</span><span>Campaign</span><span>Brand</span></div>
           <h3 class="work-card-title">FaithFlow Brand + Launch</h3>
@@ -140,8 +167,11 @@
         </div>
       </a>
 
-      <a href="project-seo-optimization.html" class="work-card reveal">
-        <img src="assets/thumbnails/uncomnseoweb-thumbnail.jpg" alt="SEO" class="work-card-img">
+      <a href="project-seo-optimization.html" class="work-card reveal" data-tilt>
+        <div class="work-card-img-wrap">
+          <img src="assets/thumbnails/uncomnseoweb-thumbnail.jpg" alt="SEO" class="work-card-img">
+          <span class="work-card-badge">Read Case Study <i class="fas fa-arrow-right"></i></span>
+        </div>
         <div class="work-card-body">
           <div class="work-card-tags"><span>SEO</span><span>Performance</span><span>Analytics</span></div>
           <h3 class="work-card-title">SEO + Web Optimization</h3>
@@ -150,8 +180,11 @@
         </div>
       </a>
 
-      <a href="project-uncomnsocialmedia.html" class="work-card reveal">
-        <img src="assets/thumbnails/uncomnsocialstrategy-thumbnail.jpg" alt="Social Strategy" class="work-card-img">
+      <a href="project-uncomnsocialmedia.html" class="work-card reveal" data-tilt>
+        <div class="work-card-img-wrap">
+          <img src="assets/thumbnails/uncomnsocialstrategy-thumbnail.jpg" alt="Social Strategy" class="work-card-img">
+          <span class="work-card-badge">Read Case Study <i class="fas fa-arrow-right"></i></span>
+        </div>
         <div class="work-card-body">
           <div class="work-card-tags"><span>Strategy</span><span>Content</span><span>Social</span></div>
           <h3 class="work-card-title">Social Media Strategy</h3>
@@ -160,8 +193,11 @@
         </div>
       </a>
 
-      <a href="project-herodesigns.html" class="work-card reveal">
-        <img src="assets/thumbnails/herodesigns-thumbnail.jpg" alt="Hero Designs" class="work-card-img">
+      <a href="project-herodesigns.html" class="work-card reveal" data-tilt>
+        <div class="work-card-img-wrap">
+          <img src="assets/thumbnails/herodesigns-thumbnail.jpg" alt="Hero Designs" class="work-card-img">
+          <span class="work-card-badge">Read Case Study <i class="fas fa-arrow-right"></i></span>
+        </div>
         <div class="work-card-body">
           <div class="work-card-tags"><span>Hero Design</span><span>UX/UI</span></div>
           <h3 class="work-card-title">Hero Section Showcase</h3>
@@ -173,8 +209,8 @@
   </section>
 
   <!-- SIDE PROJECTS -->
-  <section class="section" id="hustles" style="background:var(--bg-alt);max-width:100%;border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light)">
-    <div style="max-width:var(--max-w);margin:0 auto">
+  <div class="hustles-wrap" id="hustles">
+    <div class="hustles-inner">
       <div class="section-label reveal">Side Projects</div>
       <h2 class="section-heading reveal">Things I'm Building</h2>
       <div class="hustles-grid stg">
@@ -198,7 +234,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
   <!-- LIFE SECTION -->
   <section class="life-section" id="life">
@@ -206,18 +242,19 @@
       <div class="section-label reveal">Life Beyond</div>
       <h2 class="section-heading reveal">Pixels</h2>
     </div>
-    <div class="carousel-track">
-      <div class="carousel-item"><img src="assets/personal/photography-two.JPEG" alt="Creative"><div class="carousel-caption"><span>Creative Storyteller 📸</span></div></div>
-      <div class="carousel-item"><img src="assets/personal/emily-latte.jpg" alt="Latte"><div class="carousel-caption"><span>Latte Lover ☕</span></div></div>
-      <div class="carousel-item"><img src="assets/personal/gymrat.jpg" alt="Gym"><div class="carousel-caption"><span>Gym Rat 💪</span></div></div>
-      <div class="carousel-item"><img src="assets/personal/emily-dallas.JPG" alt="Friends"><div class="carousel-caption"><span>Big on Connection 💛</span></div></div>
-      <div class="carousel-item"><img src="assets/personal/emily-barcelona.jpg" alt="Travel"><div class="carousel-caption"><span>Always Exploring ✈️</span></div></div>
-      <!-- duplicate for seamless loop -->
-      <div class="carousel-item"><img src="assets/personal/photography-two.JPEG" alt="Creative"><div class="carousel-caption"><span>Creative Storyteller 📸</span></div></div>
-      <div class="carousel-item"><img src="assets/personal/emily-latte.jpg" alt="Latte"><div class="carousel-caption"><span>Latte Lover ☕</span></div></div>
-      <div class="carousel-item"><img src="assets/personal/gymrat.jpg" alt="Gym"><div class="carousel-caption"><span>Gym Rat 💪</span></div></div>
-      <div class="carousel-item"><img src="assets/personal/emily-dallas.JPG" alt="Friends"><div class="carousel-caption"><span>Big on Connection 💛</span></div></div>
-      <div class="carousel-item"><img src="assets/personal/emily-barcelona.jpg" alt="Travel"><div class="carousel-caption"><span>Always Exploring ✈️</span></div></div>
+    <div class="carousel-wrap">
+      <div class="carousel-track">
+        <div class="carousel-item"><img src="assets/personal/photography-two.JPEG" alt="Creative"><div class="carousel-caption"><span>Creative Storyteller 📸</span></div></div>
+        <div class="carousel-item"><img src="assets/personal/emily-latte.jpg" alt="Latte"><div class="carousel-caption"><span>Latte Lover ☕</span></div></div>
+        <div class="carousel-item"><img src="assets/personal/gymrat.jpg" alt="Gym"><div class="carousel-caption"><span>Gym Rat 💪</span></div></div>
+        <div class="carousel-item"><img src="assets/personal/emily-dallas.JPG" alt="Friends"><div class="carousel-caption"><span>Big on Connection 💛</span></div></div>
+        <div class="carousel-item"><img src="assets/personal/emily-barcelona.jpg" alt="Travel"><div class="carousel-caption"><span>Always Exploring ✈️</span></div></div>
+        <div class="carousel-item"><img src="assets/personal/photography-two.JPEG" alt="Creative"><div class="carousel-caption"><span>Creative Storyteller 📸</span></div></div>
+        <div class="carousel-item"><img src="assets/personal/emily-latte.jpg" alt="Latte"><div class="carousel-caption"><span>Latte Lover ☕</span></div></div>
+        <div class="carousel-item"><img src="assets/personal/gymrat.jpg" alt="Gym"><div class="carousel-caption"><span>Gym Rat 💪</span></div></div>
+        <div class="carousel-item"><img src="assets/personal/emily-dallas.JPG" alt="Friends"><div class="carousel-caption"><span>Big on Connection 💛</span></div></div>
+        <div class="carousel-item"><img src="assets/personal/emily-barcelona.jpg" alt="Travel"><div class="carousel-caption"><span>Always Exploring ✈️</span></div></div>
+      </div>
     </div>
   </section>
 
@@ -225,17 +262,17 @@
   <section class="contact-section" id="contact">
     <h2 class="contact-title reveal">Let's Connect</h2>
     <div class="contact-socials reveal">
-      <a href="https://linkedin.com/in/emilykuntze" target="_blank" class="contact-social" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-      <a href="mailto:kuntzeemily@gmail.com" class="contact-social" aria-label="Email"><i class="fas fa-envelope"></i></a>
-      <a href="https://behance.net/emilykuntze" target="_blank" class="contact-social" aria-label="Behance"><i class="fab fa-behance"></i></a>
-      <a href="https://calendly.com/kuntzeemily" target="_blank" class="contact-social" aria-label="Calendly"><i class="fas fa-calendar-check"></i></a>
+      <a href="https://linkedin.com/in/emilykuntze" target="_blank" class="contact-social" data-tooltip="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="mailto:kuntzeemily@gmail.com" class="contact-social" data-tooltip="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://behance.net/emilykuntze" target="_blank" class="contact-social" data-tooltip="Behance"><i class="fab fa-behance"></i></a>
+      <a href="https://calendly.com/kuntzeemily" target="_blank" class="contact-social" data-tooltip="Calendly"><i class="fas fa-calendar-check"></i></a>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
-      <span class="footer-brand">EK</span>
+      <span class="footer-brand">Emily Kuntze</span>
       <nav class="footer-nav">
         <a href="#work">Work</a>
         <a href="#hustles">Side Projects</a>
@@ -251,7 +288,8 @@
   </footer>
 
   <script>
-    // Mobile menu
+  (function(){
+    // ═══ 1. MOBILE MENU ═══
     const toggle=document.getElementById('menuToggle');
     const menu=document.getElementById('mobileMenu');
     toggle.addEventListener('click',()=>{
@@ -259,25 +297,91 @@
       toggle.querySelector('i').classList.toggle('fa-bars');
       toggle.querySelector('i').classList.toggle('fa-times');
     });
-    function closeMenu(){menu.classList.remove('open');toggle.querySelector('i').classList.add('fa-bars');toggle.querySelector('i').classList.remove('fa-times');}
+    menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+      menu.classList.remove('open');
+      toggle.querySelector('i').classList.add('fa-bars');
+      toggle.querySelector('i').classList.remove('fa-times');
+    }));
 
-    // Scroll reveal
+    // ═══ 2. SCROLL REVEAL ═══
     const obs=new IntersectionObserver(es=>{
       es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}});
     },{threshold:.08,rootMargin:'0px 0px -20px 0px'});
     document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-    // Smooth scroll for anchor links
+    // ═══ 3. SMOOTH SCROLL WITH NAV OFFSET ═══
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click',e=>{
         e.preventDefault();
-        const target=document.querySelector(a.getAttribute('href'));
-        if(target)target.scrollIntoView({behavior:'smooth',block:'start'});
+        const id=a.getAttribute('href');
+        const target=document.querySelector(id);
+        if(target){
+          const y=target.getBoundingClientRect().top+window.pageYOffset-72;
+          window.scrollTo({top:y,behavior:'smooth'});
+        }
       });
     });
 
-    // Pageshow fix for bfcache
+    // ═══ 4. NAV HIDE/SHOW ON SCROLL ═══
+    let lastScroll=0;
+    const nav=document.getElementById('mainNav');
+    window.addEventListener('scroll',()=>{
+      const curr=window.pageYOffset;
+      if(curr>lastScroll&&curr>200){nav.classList.add('hidden')}
+      else{nav.classList.remove('hidden')}
+      lastScroll=curr;
+    },{passive:true});
+
+    // ═══ 5. NAV SCROLL SPY ═══
+    const sections=document.querySelectorAll('section[id], div[id]');
+    const navLinks=document.querySelectorAll('#navLinks a');
+    const spyObs=new IntersectionObserver(es=>{
+      es.forEach(e=>{
+        if(e.isIntersecting){
+          const id=e.target.getAttribute('id');
+          navLinks.forEach(l=>{
+            l.classList.toggle('active',l.getAttribute('data-section')===id);
+          });
+        }
+      });
+    },{threshold:.3,rootMargin:'-80px 0px -40% 0px'});
+    sections.forEach(s=>spyObs.observe(s));
+
+    // ═══ 6. HERO PARALLAX FADE ═══
+    const hero=document.getElementById('hero');
+    window.addEventListener('scroll',()=>{
+      if(window.pageYOffset>hero.offsetHeight*.6){hero.classList.add('scrolled-past')}
+      else{hero.classList.remove('scrolled-past')}
+    },{passive:true});
+
+    // ═══ 7. BUBBLE HOVER — SWAP IMAGES ═══
+    document.querySelectorAll('.bubble').forEach(b=>{
+      const imgFront=b.querySelector('.bubble-img-front');
+      const imgBack=b.querySelector('.bubble-img-back');
+      if(!imgFront||!imgBack)return;
+      b.addEventListener('mouseenter',()=>{imgFront.style.opacity='0';imgBack.style.opacity='1'});
+      b.addEventListener('mouseleave',()=>{imgFront.style.opacity='1';imgBack.style.opacity='0'});
+    });
+
+    // ═══ 8. WORK CARD 3D TILT ═══
+    if(window.matchMedia('(pointer:fine)').matches){
+      document.querySelectorAll('[data-tilt]').forEach(card=>{
+        card.addEventListener('mousemove',e=>{
+          const rect=card.getBoundingClientRect();
+          const x=(e.clientX-rect.left)/rect.width-.5;
+          const y=(e.clientY-rect.top)/rect.height-.5;
+          card.style.transform=`perspective(800px) rotateY(${x*6}deg) rotateX(${-y*4}deg) translateY(-6px)`;
+        });
+        card.addEventListener('mouseleave',()=>{
+          card.style.transform='perspective(800px) rotateY(0) rotateX(0) translateY(0)';
+        });
+      });
+    }
+
+    // ═══ 9. BFCACHE FIX ═══
     window.addEventListener('pageshow',e=>{if(e.persisted)document.body.style.opacity='1'});
+
+  })();
   </script>
 </body>
 </html>
