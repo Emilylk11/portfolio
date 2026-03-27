@@ -18,7 +18,7 @@ img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
 
 /* Dot grid background (like Kirtanya's) */
-body::before{content:'';position:fixed;inset:0;z-index:-1;background-image:radial-gradient(circle,#d1d5db 1px,transparent 1px);background-size:24px 24px;opacity:.35;pointer-events:none}
+body::before{content:'';position:fixed;inset:0;z-index:-1;background-image:radial-gradient(circle,#c5c9d1 1.2px,transparent 1.2px);background-size:22px 22px;opacity:.55;pointer-events:none}
 
 /* ═══ NAVIGATION ═══ */
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border-light);transition:transform .35s ease}
@@ -43,27 +43,36 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background-image:radia
 /* ═══ HERO ═══ */
 .hero{padding:calc(var(--nav-h) + 5rem) 2.5rem 4rem;text-align:center;position:relative;overflow:hidden;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center}
 
-/* Photo bubbles — flip on hover */
-.hero-bubbles{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:3.5rem}
-.bubble{position:relative;display:flex;align-items:center;gap:.7rem;background:var(--bg-alt);border:1px solid var(--border);border-radius:100px;padding:.4rem 1.5rem .4rem .4rem;box-shadow:0 2px 16px rgba(0,0,0,.04);cursor:default;overflow:hidden;transition:transform .3s cubic-bezier(.34,1.56,.64,1),box-shadow .3s}
-.bubble:hover{transform:scale(1.04);box-shadow:0 6px 24px rgba(0,0,0,.08)}
-.bubble img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid #fff;flex-shrink:0}
-.bubble-content{position:relative;min-width:100px}
+/* Photo bubbles — single shared container like Kirtanya */
+.hero-bubbles{display:flex;align-items:center;justify-content:center;margin-bottom:3rem}
+.bubbles-container{display:flex;align-items:center;gap:0;background:var(--bg-alt);border:1px solid var(--border);border-radius:100px;padding:.35rem .5rem;box-shadow:0 2px 16px rgba(0,0,0,.04)}
+.bubble{display:flex;align-items:center;gap:.6rem;padding:.2rem 1.2rem .2rem .2rem;cursor:default;position:relative;border-radius:100px;transition:background .25s}
+.bubble:first-child{border-right:1px solid var(--border-light)}
+.bubble:hover{background:rgba(37,99,235,.04)}
+.bubble-img-wrap{position:relative;width:48px;height:48px;flex-shrink:0}
+.bubble-img-wrap img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2.5px solid #fff;position:absolute;top:0;left:0;transition:opacity .35s cubic-bezier(.34,1.56,.64,1)}
+.bubble-img-back{opacity:0}
+.bubble:hover .bubble-img-front{opacity:0}
+.bubble:hover .bubble-img-back{opacity:1}
+.bubble-content{position:relative;min-width:90px;height:38px}
 .bubble-front,.bubble-back{transition:all .35s cubic-bezier(.34,1.56,.64,1)}
-.bubble-back{position:absolute;top:0;left:0;opacity:0;transform:translateY(8px)}
-.bubble:hover .bubble-front{opacity:0;transform:translateY(-8px)}
+.bubble-back{position:absolute;top:0;left:0;opacity:0;transform:translateY(6px)}
+.bubble:hover .bubble-front{opacity:0;transform:translateY(-6px)}
 .bubble:hover .bubble-back{opacity:1;transform:translateY(0)}
-.bubble-small{font-size:.72rem;font-weight:400;color:var(--text-3);line-height:1.3}
-.bubble-big{font-weight:700;color:var(--text-1);font-size:1rem;line-height:1.3}
+.bubble-small{font-size:.68rem;font-weight:400;color:var(--text-3);line-height:1.2}
+.bubble-big{font-weight:700;color:var(--text-1);font-size:1.05rem;line-height:1.3}
 
-/* Headline */
-.hero-title{font-size:clamp(3rem,7.5vw,5.8rem);line-height:1.06;letter-spacing:-.035em;margin-bottom:1.75rem;max-width:900px}
-.hero-title .serif{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--accent);display:block}
-.hero-title .bold{font-family:var(--sans);font-weight:700;display:block;color:var(--text-1)}
+/* Headline — serif BIGGER than sans, matching Kirtanya's hierarchy */
+.hero-title{line-height:1.05;letter-spacing:-.035em;margin-bottom:1.75rem;max-width:950px}
+.hero-title .serif{font-family:var(--serif);font-style:italic;font-weight:500;color:var(--accent);display:block;font-size:clamp(3.5rem,8.5vw,7rem)}
+.hero-title .bold{font-family:var(--sans);font-weight:700;display:block;color:var(--text-1);font-size:clamp(2.8rem,7vw,5.5rem);letter-spacing:-.04em}
 
-/* Tagline with icons */
-.hero-tagline{font-size:clamp(1.1rem,2.5vw,1.5rem);font-weight:600;color:var(--text-1);max-width:700px;margin:0 auto;line-height:1.5;letter-spacing:-.01em}
-.hero-tagline .icon-inline{display:inline-block;color:var(--accent);font-size:1.1em;vertical-align:middle;margin:0 .15em}
+/* Tagline with inline SVG icons */
+.hero-tagline{font-size:clamp(1.2rem,2.8vw,1.65rem);font-weight:700;color:var(--text-1);max-width:750px;margin:0 auto;line-height:1.5;letter-spacing:-.015em}
+.hero-tagline .tl-accent{color:var(--accent)}
+.hero-tagline .tl-icon{display:inline-block;vertical-align:middle;margin:0 .1em}
+.hero-tagline .tl-icon svg{width:1.2em;height:1.2em;vertical-align:middle}
+.hero-tagline .tl-muted{color:var(--text-3);font-weight:600}
 
 /* ═══ MOUNTAIN WAVE DIVIDER ═══ */
 .wave-divider{width:100%;overflow:hidden;line-height:0;margin-top:-2px}
@@ -182,9 +191,12 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background-image:radia
 }
 @media(max-width:600px){
   .hero{padding:calc(var(--nav-h) + 2.5rem) 1.5rem 2rem;min-height:auto}
-  .hero-title{font-size:clamp(2.4rem,10vw,3.5rem)}
+  .hero-title .serif{font-size:clamp(2.4rem,10vw,3.5rem)}
+  .hero-title .bold{font-size:clamp(2rem,8vw,3rem)}
   .hero-tagline{font-size:1rem}
   .hero-bubbles{flex-direction:column;gap:.75rem}
+  .bubbles-container{flex-direction:column;border-radius:24px;padding:.5rem}
+  .bubble:first-child{border-right:none;border-bottom:1px solid var(--border-light)}
   .section{padding:3.5rem 1.5rem}
   .hustles-inner{padding:3.5rem 1.5rem}
   .work-card-body{padding:1.25rem 1.5rem}
