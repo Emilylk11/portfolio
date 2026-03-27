@@ -330,15 +330,7 @@
       });
     });
 
-    // ═══ 4. NAV HIDE/SHOW ON SCROLL ═══
-    let lastScroll=0;
-    const nav=document.getElementById('mainNav');
-    window.addEventListener('scroll',()=>{
-      const curr=window.pageYOffset;
-      if(curr>lastScroll&&curr>200){nav.classList.add('hidden')}
-      else{nav.classList.remove('hidden')}
-      lastScroll=curr;
-    },{passive:true});
+    // ═══ 4. NAV — always visible (sticky) ═══
 
     // ═══ 5. NAV SCROLL SPY ═══
     const sections=document.querySelectorAll('section[id], div[id]');
