@@ -11,26 +11,27 @@
   <link rel="stylesheet" href="css/shared.css"><link rel="stylesheet" href="css/casestudy.css">
   
 </head>
-<body>
-  
-  <nav class="nav" id="nav">
-    <a href="index.html" class="nav-logo"><span>Emily</span> Kuntze</a>
-    <div class="nav-center"><a href="index.html#work">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
-    <div class="nav-right">
-      <a href="https://linkedin.com/in/emilykuntze" target="_blank" aria-label="LinkedIn" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://behance.net/emilykuntze" target="_blank" aria-label="Behance" class="social-link"><i class="fab fa-behance"></i></a>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></button>
-      <a href="contact.html" class="nav-cta btn-magnetic">Get in touch</a>
-    </div>
-    <div class="menu-btn">
-      <button class="theme-toggle" id="themeToggleMob" aria-label="Toggle theme"><i class="fas fa-sun"></i><i class="fas fa-moon"></i></button>
-      <button id="hamburger" style="background:none;border:none;color:var(--text-1);font-size:1.3rem;cursor:pointer" aria-label="Menu"><i class="fas fa-bars"></i></button>
+<body>  <!-- NAV -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">EK</a>
+      <div class="nav-center" id="navLinks">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#hustles">Side Projects</a>
+        <a href="index.html#life">Life</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://linkedin.com/in/emilykuntze" target="_blank" class="nav-social" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://behance.net/emilykuntze" target="_blank" class="nav-social" aria-label="Behance"><i class="fab fa-behance"></i></a>
+        <a href="mailto:kuntzeemily@gmail.com" class="nav-social" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+      <button class="nav-hamburger" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
     </div>
   </nav>
-  <div class="mobile-overlay" id="mobileOverlay"><a href="index.html">Home</a><a href="index.html#work">Projects</a><a href="about.html">About</a><a href="contact.html">Contact</a></div>
+  <div class="mobile-menu" id="mobileMenu"><a href="index.html#work">Work</a><a href="index.html#hustles">Side Projects</a><a href="index.html#life">Life</a><a href="index.html#contact">Contact</a></div>
 
   <section class="proj-hero">
-    <div class="mesh mesh-h1"></div><div class="mesh mesh-h2"></div>
     <div class="proj-hero-inner">
       <a href="index.html#work" class="back-link hero-enter hero-enter-d1"><i class="fas fa-arrow-left"></i> Back to projects</a>
       <span class="proj-hero-eyebrow hero-enter hero-enter-d1">Case Study</span>
@@ -39,10 +40,9 @@
       <div class="proj-hero-meta hero-enter hero-enter-d4"><div class="proj-meta-item"><div class="proj-meta-label">Client</div><div class="proj-meta-value">UNCOMN</div></div><div class="proj-meta-item"><div class="proj-meta-label">Role</div><div class="proj-meta-value">SEO & Analytics</div></div><div class="proj-meta-item"><div class="proj-meta-label">Timeline</div><div class="proj-meta-value">2 Months</div></div><div class="proj-meta-item"><div class="proj-meta-label">Focus</div><div class="proj-meta-value">Technical SEO</div></div></div>
     </div>
   </section>
-  <div class="sep"></div>
+  
 
-  <section class="case-section">
-    <div class="mesh mesh-cs1"></div><div class="mesh mesh-cs2"></div>
+  
     <div class="case-body">
 
       <div class="case-overview reveal">
@@ -61,7 +61,7 @@
       <div class="case-block reveal">
         <span class="case-block-label">Process</span>
         <h2>How I got there</h2>
-        <div class="process-grid"><div class="process-step"><div class="spotlight"></div><span class="step-num">01 — Audit</span><p class="step-text">Ran Lighthouse, SEMrush, and Search Console audits. Compiled a prioritized task list ranked by traffic impact.</p></div><div class="process-step"><div class="spotlight"></div><span class="step-num">02 — Clean Up</span><p class="step-text">Fixed all meta, heading structure, alt tags, link integrity, and accessibility violations across every page.</p></div><div class="process-step"><div class="spotlight"></div><span class="step-num">03 — Optimize</span><p class="step-text">Rebuilt CTA sections, improved internal linking architecture, and compressed images by an average of 70%.</p></div><div class="process-step"><div class="spotlight"></div><span class="step-num">04 — Track</span><p class="step-text">Implemented GA4 + GTM with Consent Mode v2, set up conversion events, and built a Looker Studio dashboard.</p></div></div>
+        <div class="process-grid"><div class="process-step"><span class="step-num">01 — Audit</span><p class="step-text">Ran Lighthouse, SEMrush, and Search Console audits. Compiled a prioritized task list ranked by traffic impact.</p></div><div class="process-step"><span class="step-num">02 — Clean Up</span><p class="step-text">Fixed all meta, heading structure, alt tags, link integrity, and accessibility violations across every page.</p></div><div class="process-step"><span class="step-num">03 — Optimize</span><p class="step-text">Rebuilt CTA sections, improved internal linking architecture, and compressed images by an average of 70%.</p></div><div class="process-step"><span class="step-num">04 — Track</span><p class="step-text">Implemented GA4 + GTM with Consent Mode v2, set up conversion events, and built a Looker Studio dashboard.</p></div></div>
       </div>
 
       <div class="ba-toggle-section reveal">
@@ -86,25 +86,30 @@
       <div class="case-block reveal">
         <span class="case-block-label">Impact</span>
         <h2>The numbers that matter</h2>
-        <div class="results-grid"><div class="result-item"><div class="result-stat"><span class="counter" data-target="28">0</span><span>%</span></div><p class="result-desc">Increase in organic traffic</p></div><div class="result-item"><div class="result-stat"><span class="counter" data-target="36">0</span><span>%</span></div><p class="result-desc">Improvement in site speed</p></div><div class="result-item"><div class="result-stat"><span class="counter" data-target="63">0</span><span>%</span></div><p class="result-desc">Increase in overall site score</p></div></div>
+        <div class="results-grid"><div class="result-card"><div class="result-stat"><span class="counter" data-target="28">0</span><span>%</span></div><p class="result-label">Increase in organic traffic</p></div><div class="result-card"><div class="result-stat"><span class="counter" data-target="36">0</span><span>%</span></div><p class="result-label">Improvement in site speed</p></div><div class="result-card"><div class="result-stat"><span class="counter" data-target="63">0</span><span>%</span></div><p class="result-label">Increase in overall site score</p></div></div>
       </div>
 
     </div>
-  </section>
-  <div class="sep"></div>
-
-  <section class="section">
+  <section class="section" style="max-width:var(--max-w);margin:0 auto;padding:2rem 2.5rem">
     <a href="project-herodesigns.html" class="next-proj btn-magnetic reveal">
       <div><div class="next-proj-label">Next Project</div><div class="next-proj-name">Hero Section Showcase</div></div>
       <div class="next-proj-arrow"><i class="fas fa-arrow-right"></i></div>
     </a>
   </section>
-  <footer>
-    <p>&copy; 2025 Emily Kuntze</p>
-    <div class="footer-links">
-      <a href="https://linkedin.com/in/emilykuntze" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-      <a href="mailto:kuntzeemily@gmail.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://behance.net/emilykuntze" target="_blank"><i class="fab fa-behance"></i></a>
+    <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-brand">Emily Kuntze</span>
+      <nav class="footer-nav">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#hustles">Side Projects</a>
+        <a href="index.html#life">Life</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="nav-right" style="gap:.75rem;position:static">
+        <a href="https://linkedin.com/in/emilykuntze" target="_blank" class="nav-social"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://behance.net/emilykuntze" target="_blank" class="nav-social"><i class="fab fa-behance"></i></a>
+        <a href="mailto:kuntzeemily@gmail.com" class="nav-social"><i class="fas fa-envelope"></i></a>
+      </div>
     </div>
   </footer>
   <script src="js/shared.js"></script><script src="js/casestudy.js"></script>

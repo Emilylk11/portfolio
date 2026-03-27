@@ -21,17 +21,5 @@ document.addEventListener('DOMContentLoaded',()=>{
       toggle.querySelector('i').classList.remove('fa-times');
     }));
   }
-
-  // Nav hide/show on scroll
-  let lastScroll=0;
-  const nav=document.querySelector('.nav');
-  if(nav){
-    window.addEventListener('scroll',()=>{
-      const curr=window.pageYOffset;
-      if(curr>lastScroll&&curr>200){nav.classList.add('hidden')}
-      else{nav.classList.remove('hidden')}
-      lastScroll=curr;
-    },{passive:true});
-  }
 });
 window.addEventListener('pageshow',e=>{if(e.persisted)document.body.style.opacity='1'});
