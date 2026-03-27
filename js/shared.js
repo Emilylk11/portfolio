@@ -157,6 +157,23 @@ document.addEventListener('DOMContentLoaded',()=>{
       }
     });
   },{threshold:.5});
-  const el=document.querySelector('.hero-metrics');
+  const el=document.querySelector('.metrics-strip') || document.querySelector('.hero-metrics');
   if(el)obs.observe(el);
+});
+
+// ─── Hero closet 3D tilt on mouse move ───
+document.addEventListener('DOMContentLoaded',()=>{
+  if(!window.matchMedia('(pointer:fine)').matches)return;
+  const visual=document.getElementById('heroVisual');
+  const hero=document.getElementById('heroSection');
+  if(!visual||!hero)return;
+  hero.addEventListener('mousemove',e=>{
+    const rect=hero.getBoundingClientRect();
+    const x=(e.clientX-rect.left)/rect.width-.5;
+    const y=(e.clientY-rect.top)/rect.height-.5;
+    visual.querySelector('img').style.transform=`perspective(1000px) rotateY(${x*8}deg) rotateX(${-y*6}deg)`;
+  });
+  hero.addEventListener('mouseleave',()=>{
+    visual.querySelector('img').style.transform='perspective(1000px) rotateY(0deg) rotateX(0deg)';
+  });
 });
