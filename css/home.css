@@ -8,29 +8,18 @@
 .hero .mesh-3{width:350px;height:350px;background:var(--mesh-3);top:40%;left:45%;animation:meshDrift 30s ease-in-out infinite 5s}
 @keyframes meshDrift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(20px,-15px) scale(1.05)}66%{transform:translate(-15px,10px) scale(.95)}}
 
-/* ═══ SHOOTING STARS ═══ */
-.stars-container{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none}
-.shooting-star{position:absolute;width:100px;height:1px;background:linear-gradient(90deg,var(--ice),transparent);border-radius:1px;opacity:0;filter:blur(0.5px)}
-.shooting-star::before{content:'';position:absolute;right:0;top:-1px;width:3px;height:3px;border-radius:50%;background:var(--ice);box-shadow:0 0 6px var(--ice),0 0 12px var(--ice)}
+/* ═══ AMBIENT RINGS ═══ */
+.rings-container{position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none}
+.ambient-ring{position:absolute;border-radius:50%;border:1px solid var(--ice);opacity:0}
 
-.shooting-star:nth-child(1){top:15%;left:-100px;animation:shoot 4s linear 1s infinite}
-.shooting-star:nth-child(2){top:35%;left:-100px;animation:shoot 5s linear 3s infinite;width:80px}
-.shooting-star:nth-child(3){top:55%;left:-100px;animation:shoot 3.5s linear 5.5s infinite;width:120px}
-.shooting-star:nth-child(4){top:25%;left:-100px;animation:shoot 6s linear 7s infinite;width:60px}
-.shooting-star:nth-child(5){top:70%;left:-100px;animation:shoot 4.5s linear 2s infinite;width:90px}
-.shooting-star:nth-child(6){top:45%;left:-100px;animation:shoot 5.5s linear 9s infinite;width:70px}
-.shooting-star:nth-child(7){top:10%;left:-100px;animation:shoot 3s linear 4s infinite;width:110px}
-.shooting-star:nth-child(8){top:80%;left:-100px;animation:shoot 4s linear 6.5s infinite;width:85px}
+.ambient-ring:nth-child(1){width:300px;height:300px;top:8%;right:5%;opacity:.06;animation:ringDrift 25s ease-in-out infinite,ringSpin 40s linear infinite}
+.ambient-ring:nth-child(2){width:180px;height:180px;top:55%;left:8%;opacity:.05;border-style:dashed;animation:ringDrift 30s ease-in-out infinite 3s,ringSpin 50s linear infinite reverse}
+.ambient-ring:nth-child(3){width:450px;height:450px;top:20%;left:55%;opacity:.03;animation:ringDrift 35s ease-in-out infinite 6s,ringSpin 60s linear infinite}
+.ambient-ring:nth-child(4){width:120px;height:120px;bottom:15%;right:20%;opacity:.07;border-width:1.5px;animation:ringDrift 20s ease-in-out infinite 2s,ringSpin 35s linear infinite reverse}
+.ambient-ring:nth-child(5){width:220px;height:220px;top:65%;right:35%;opacity:.04;border-style:dashed;animation:ringDrift 28s ease-in-out infinite 8s,ringSpin 45s linear infinite}
 
-@keyframes shoot{
-  0%{transform:translateX(0) translateY(0) rotate(-25deg);opacity:0}
-  5%{opacity:.7}
-  60%{opacity:.5}
-  100%{transform:translateX(calc(100vw + 200px)) translateY(120px) rotate(-25deg);opacity:0}
-}
-
-[data-theme="light"] .shooting-star{background:linear-gradient(90deg,var(--ice),transparent);opacity:0}
-[data-theme="light"] .shooting-star::before{background:var(--ice);box-shadow:0 0 4px var(--ice),0 0 8px var(--ice)}
+@keyframes ringSpin{to{transform:rotate(360deg)}}
+@keyframes ringDrift{0%,100%{transform:translate(0,0) rotate(0deg)}33%{transform:translate(12px,-18px) rotate(120deg)}66%{transform:translate(-8px,14px) rotate(240deg)}}
 
 /* ═══ FLOATING ORBS ═══ */
 .float-orb{position:absolute;border-radius:50%;z-index:0;pointer-events:none}
@@ -105,6 +94,6 @@
   .metrics-inner{gap:2rem;padding:1.25rem 1.5rem;flex-wrap:wrap;justify-content:center}
   .metric-sep{display:none}
   .scroll-cue{display:none}
-  .shooting-star:nth-child(n+5){display:none}
+  .shooting-star:nth-child(n+5),.ambient-ring:nth-child(n+4){display:none}
   .float-orb:nth-child(n+5){display:none}
 }
