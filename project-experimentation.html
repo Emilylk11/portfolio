@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Building a repeatable experimentation program and fixing the revenue attribution underneath it — VWO, GA4, GTM, cross-domain checkouts.">
+  <meta property="og:title" content="Experimentation & Revenue Attribution | Emily Kuntze">
+  <meta property="og:description" content="Most brands optimize against numbers that are quietly wrong. Fix the scoreboard first.">
+  <title>Experimentation &amp; Attribution | Emily Kuntze</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/main-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/shared.css"><link rel="stylesheet" href="css/casestudy.css">
+  <style>
+    .prob{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-top:1.25rem}
+    .prob-row{background:var(--bg);padding:1.35rem 1.5rem;transition:background .3s}
+    .prob-row:hover{background:var(--bg-alt)}
+    .prob-row h3{font-size:.95rem;font-weight:700;margin-bottom:.3rem;letter-spacing:-.01em}
+    .prob-row p{font-size:.87rem;color:var(--text-2);line-height:1.75;margin:0}
+    .prob-row .fix{display:inline-block;font-size:.64rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--accent);background:var(--accent-light);border-radius:100px;padding:.22rem .65rem;margin-bottom:.5rem}
+    .pull{border-left:3px solid var(--accent);background:var(--bg-alt);padding:1.25rem 1.5rem;border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin:1.5rem 0}
+    .pull p{font-size:1rem;line-height:1.75;color:var(--text-1);margin:0;font-weight:500}
+    .stackrow{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem}
+    .chip{font-size:.75rem;font-weight:500;padding:.4rem .85rem;border-radius:100px;border:1px solid var(--border);color:var(--text-2);background:var(--bg)}
+    .chip.on{border-color:var(--accent);color:var(--accent);background:var(--accent-light)}
+  </style>
+</head>
+<body>
+  <nav class="nav" id="mainNav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">EK</a>
+      <div class="nav-center" id="navLinks">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#hustles">Side Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://linkedin.com/in/emilykuntze" target="_blank" class="nav-social" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/Emilylk11" target="_blank" class="nav-social" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:kuntzeemily@gmail.com" class="nav-social" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+      <button class="nav-hamburger" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu"><a href="index.html#work">Work</a><a href="index.html#services">Services</a><a href="index.html#hustles">Side Projects</a><a href="index.html#contact">Contact</a></div>
+
+  <section class="proj-hero">
+    <div class="proj-hero-inner">
+      <a href="index.html#work" class="back-link hero-enter hero-enter-d1"><i class="fas fa-arrow-left"></i> Back to projects</a>
+      <span class="proj-hero-eyebrow hero-enter hero-enter-d1">Case Study</span>
+      <h1 class="proj-hero-title hero-enter hero-enter-d2">Experimentation &amp;<br>Revenue Attribution</h1>
+      <p class="proj-hero-desc hero-enter hero-enter-d3">Building a testing program on a stack that fights you, and fixing the measurement underneath it first.</p>
+      <div class="proj-hero-meta hero-enter hero-enter-d4">
+        <div class="proj-meta-item"><div class="proj-meta-label">Client</div><div class="proj-meta-value">DTC Supplement Brand</div></div>
+        <div class="proj-meta-item"><div class="proj-meta-label">Role</div><div class="proj-meta-value">CRO &amp; Growth Manager</div></div>
+        <div class="proj-meta-item"><div class="proj-meta-label">Stack</div><div class="proj-meta-value">VWO · GA4 · GTM · Apps Script</div></div>
+        <div class="proj-meta-item"><div class="proj-meta-label">Scope</div><div class="proj-meta-value">Program Ownership</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="case-body">
+
+    <div class="case-block reveal">
+      <span class="case-block-label">Problem</span>
+      <h2>Tests broke silently, and the data was wrong anyway</h2>
+      <p>Landing pages ran on WordPress and Elementor, checkout on a separate platform. Elementor hydrates the DOM late and injects its own CSS over yours, so tests looked fine in preview and did nothing live. Nothing was reusable, so every test started from scratch. Underneath that, revenue numbers from the ad platform and the checkout never matched.</p>
+    </div>
+
+    <div class="case-block reveal">
+      <span class="case-block-label">Framework</span>
+      <h2>Five problems, solved once</h2>
+      <div class="prob">
+        <div class="prob-row"><span class="fix">Style bleed</span><h3>Namespaced scoping</h3><p>Every variant adds a versioned body class and prefixes its CSS with it, so styling can't leak into control traffic.</p></div>
+        <div class="prob-row"><span class="fix">Silent failure</span><h3>Polling for late DOM</h3><p>The target element often isn't there when the campaign fires. Variants poll with a retry cap. This caused more dead tests than anything else.</p></div>
+        <div class="prob-row"><span class="fix">Wrong target</span><h3>Content-matched targeting</h3><p>These pages carry several hidden H1s from mobile menus. Targeting matches on text, then checks the element actually renders.</p></div>
+        <div class="prob-row"><span class="fix">Broken attribution</span><h3>Separate CTA classes</h3><p>Reusing the page's CTA class on an injected button could rewrite affiliate transaction IDs. Injected CTAs get their own.</p></div>
+        <div class="prob-row"><span class="fix">Double counting</span><h3>Versioned event keys</h3><p>dataLayer events fire against versioned session keys, so iterating doesn't double-count or inherit stale state.</p></div>
+      </div>
+      <p style="margin-top:1.1rem;font-size:.88rem;color:var(--text-3)">All ES5-strict, because the testing platform's parser rejects anything newer. That's not in any documentation I could find.</p>
+    </div>
+
+    <div class="case-block reveal">
+      <span class="case-block-label">Measurement</span>
+      <h2>Reading revenue the tool couldn't see</h2>
+      <p>Some high-traffic promo pages ran checkout on a different domain, so the testing platform couldn't see the transaction at all. We were reading those tests on click-through, which isn't the same thing.</p>
+      <p>I wired the platform's GA4 connection to stamp variant assignment onto the session, then registered custom campaign and variation dimensions. Parameter names had to be confirmed in DebugView after going live, since the integration doesn't fire in preview. That threw me for a while before I worked out it was expected.</p>
+      <div class="stackrow">
+        <span class="chip on">GA4</span><span class="chip on">GTM</span><span class="chip on">dataLayer</span><span class="chip on">Custom dimensions</span><span class="chip on">Cross-domain attribution</span><span class="chip">VWO</span><span class="chip">Apps Script</span>
+      </div>
+    </div>
+
+    <div class="case-block reveal">
+      <span class="case-block-label">Reconciliation</span>
+      <h2>Spend the reporting had lost</h2>
+      <p>I built a reconciliation tool in Apps Script to line up ad revenue against checkout revenue. What came out wasn't a rounding error: a meaningful chunk of paid spend on one product line was routing to a checkout the reporting stack wasn't attributing at all. The channel looked like it was underperforming. It wasn't.</p>
+    </div>
+
+    <div class="case-block reveal">
+      <span class="case-block-label">Diagnosis</span>
+      <h2>The 0% mobile conversion rate</h2>
+      <p>A funnel showed 0% mobile conversion and everyone's first instinct, mine included, was the landing page. I segmented by device, browser and channel before touching the design. It was two things stacked: the checkout wasn't rendering properly on mobile, and Safari's tracking prevention was breaking cross-device attribution. A page test would have fixed neither and come back null.</p>
+    </div>
+
+    <!-- TODO EMILY: fill from VWO or delete. Third stat (48→61) is real, keep it. -->
+    <div class="case-block reveal">
+      <span class="case-block-label">Impact</span>
+      <h2>Results</h2>
+      <div class="results-grid">
+        <div class="result-card"><div class="result-stat"><span class="counter" data-target="0">0</span></div><p class="result-label">Tests shipped per month</p></div>
+        <div class="result-card"><div class="result-stat"><span class="counter" data-target="0">0</span></div><p class="result-label">Documented wins</p></div>
+        <div class="result-card"><div class="result-stat"><span class="counter" data-target="61">0</span></div><p class="result-label">Mobile PageSpeed, up from 48</p></div>
+      </div>
+    </div>
+
+  </div>
+
+  <section class="section" style="max-width:var(--max-w);margin:0 auto;padding:2rem 2.5rem">
+    <a href="project-command-center.html" class="next-proj btn-magnetic reveal">
+      <div><div class="next-proj-label">Next Project</div><div class="next-proj-name">Marketing Command Center</div></div>
+      <div class="next-proj-arrow"><i class="fas fa-arrow-right"></i></div>
+    </a>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-brand">Emily Kuntze</span>
+      <nav class="footer-nav">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#hustles">Side Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="nav-right" style="gap:.75rem;position:static">
+        <a href="https://linkedin.com/in/emilykuntze" target="_blank" class="nav-social"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/Emilylk11" target="_blank" class="nav-social"><i class="fab fa-github"></i></a>
+        <a href="mailto:kuntzeemily@gmail.com" class="nav-social"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+  <script src="js/shared.js"></script><script src="js/casestudy.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A multi-agent operator dashboard that consolidates paid ads data, analyzes creative, generates pages, and routes every recommendation to a human review board.">
+  <meta property="og:title" content="Marketing Command Center | Emily Kuntze">
+  <meta property="og:description" content="An in-house growth operating system — built, not bought.">
+  <title>Marketing Command Center | Emily Kuntze</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/main-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/shared.css"><link rel="stylesheet" href="css/casestudy.css">
+  <style>
+    .agents{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-top:1.25rem}
+    .agent{background:var(--bg);padding:1.25rem 1.35rem;transition:background .3s}
+    .agent:hover{background:var(--bg-alt)}
+    .agent i{color:var(--accent);font-size:1rem;margin-bottom:.55rem;display:block}
+    .agent h3{font-size:.9rem;font-weight:700;margin-bottom:.25rem;letter-spacing:-.01em}
+    .agent p{font-size:.8rem;color:var(--text-2);line-height:1.65;margin:0}
+    .layers{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-top:1.25rem}
+    .layer{background:var(--bg);padding:1.3rem 1.5rem;display:grid;grid-template-columns:150px 1fr;gap:1.25rem;align-items:start}
+    .layer:hover{background:var(--bg-alt)}
+    .layer-name{font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+    .layer p{font-size:.87rem;color:var(--text-2);line-height:1.75;margin:0}
+    .pull{border-left:3px solid var(--accent);background:var(--bg-alt);padding:1.25rem 1.5rem;border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin:1.5rem 0}
+    .pull p{font-size:1rem;line-height:1.75;color:var(--text-1);margin:0;font-weight:500}
+    .demo-note{border:1px dashed var(--text-3);border-radius:var(--radius);padding:1.35rem 1.5rem;margin-top:1.25rem;background:var(--bg-alt)}
+    .demo-note p{font-size:.87rem;color:var(--text-2);line-height:1.75;margin:0}
+    .demo-link{display:inline-flex;align-items:center;gap:.5rem;background:var(--accent);color:#fff;font-size:.85rem;font-weight:600;padding:.7rem 1.4rem;border-radius:100px;transition:gap .25s,background .25s}
+    .demo-link:hover{background:var(--accent-dark);gap:.8rem}
+    @media(max-width:900px){.agents{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:768px){.agents{grid-template-columns:1fr}.layer{grid-template-columns:1fr;gap:.5rem}}
+  </style>
+</head>
+<body>
+  <nav class="nav" id="mainNav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">EK</a>
+      <div class="nav-center" id="navLinks">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#hustles">Side Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://linkedin.com/in/emilykuntze" target="_blank" class="nav-social" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/Emilylk11" target="_blank" class="nav-social" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:kuntzeemily@gmail.com" class="nav-social" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+      <button class="nav-hamburger" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu"><a href="index.html#work">Work</a><a href="index.html#services">Services</a><a href="index.html#hustles">Side Projects</a><a href="index.html#contact">Contact</a></div>
+
+  <section class="proj-hero">
+    <div class="proj-hero-inner">
+      <a href="index.html#work" class="back-link hero-enter hero-enter-d1"><i class="fas fa-arrow-left"></i> Back to projects</a>
+      <span class="proj-hero-eyebrow hero-enter hero-enter-d1">Case Study</span>
+      <h1 class="proj-hero-title hero-enter hero-enter-d2">Marketing<br>Command Center</h1>
+      <p class="proj-hero-desc hero-enter hero-enter-d3">The dashboard the pipeline runs through. Pulls the data together, runs the workers, and puts every recommendation in front of a person before anything happens.</p>
+      <div class="proj-hero-meta hero-enter hero-enter-d4">
+        <div class="proj-meta-item"><div class="proj-meta-label">Type</div><div class="proj-meta-value">Internal Platform</div></div>
+        <div class="proj-meta-item"><div class="proj-meta-label">Role</div><div class="proj-meta-value">Architect &amp; Sole Builder</div></div>
+        <div class="proj-meta-item"><div class="proj-meta-label">Stack</div><div class="proj-meta-value">React · Vite · Express · Node</div></div>
+        <div class="proj-meta-item"><div class="proj-meta-label">Status</div><div class="proj-meta-value">In Production</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="case-body">
+
+    <div class="case-block reveal">
+      <span class="case-block-label">Problem</span>
+      <h2>A stack that didn't talk to itself</h2>
+      <p>Ad data in one place, site analytics in another, orders in a third, reconciled by hand. Everything downstream was manual too: analyzing creative, deciding what to do about it, building the page, then writing the report about all of it. That list is roughly what a performance agency sells you as a retainer, and most of it is repetitive enough for a system to handle.</p>
+    </div>
+
+    <div class="case-block reveal">
+      <span class="case-block-label">Architecture</span>
+      <h2>Four layers</h2>
+      <div class="layers">
+        <div class="layer"><div class="layer-name">Data</div><p>Scheduled ingestion of ad, analytics and order data, with a reconciliation step that makes them agree before anything reads them.</p></div>
+        <div class="layer"><div class="layer-name">Workers</div><p>Separate workspaces each doing one job, instead of one assistant asked to do everything. Narrow scope keeps output reviewable.</p></div>
+        <div class="layer"><div class="layer-name">Pipeline</div><p>The overnight run, with thresholds it has to clear and a dry-run option at every stage that writes.</p></div>
+        <div class="layer"><div class="layer-name">Review</div><p>A Kanban board where recommendations wait for a person, plus automated reporting.</p></div>
+      </div>
+      <div class="agents" style="margin-top:1rem">
+        <div class="agent"><i class="fas fa-satellite-dish"></i><h3>Signal Reader</h3><p>Surfaces friction candidates from funnel behavior.</p></div>
+        <div class="agent"><i class="fas fa-tags"></i><h3>Angle Classifier</h3><p>Works out which promise is landing.</p></div>
+        <div class="agent"><i class="fas fa-wand-magic-sparkles"></i><h3>Page Composer</h3><p>Writes to documented style rules.</p></div>
+        <div class="agent"><i class="fas fa-sitemap"></i><h3>Offer Mapper</h3><p>Maps offer structure and post-purchase path.</p></div>
+        <div class="agent"><i class="fas fa-list-check"></i><h3>Measurement Guard</h3><p>Checks tracking before a result is trusted.</p></div>
+        <div class="agent"><i class="fas fa-file-lines"></i><h3>Digest Writer</h3><p>Handles the recurring reporting.</p></div>
+      </div>
+    </div>
+
+    <div class="case-block reveal">
+      <span class="case-block-label">The rule</span>
+      <h2>Copy automates. Layout doesn't.</h2>
+      <div class="pull"><p>Copy can be generated against written voice rules. Layout and structure can't. That rule lives in how the pipeline branches, not in a prompt asking nicely.</p></div>
+      <p>Deciding where that line sits took longer than building either side of it. Everything that writes has a dry-run path, a threshold to clear, and somewhere a person can say no.</p>
+    </div>
+
+    <div class="case-block reveal">
+      <span class="case-block-label">Demo</span>
+      <h2>See it run</h2>
+      <div class="demo-note">
+        <p><strong>There's a working demo you can click through.</strong> The real one runs on client data, so I rebuilt it with made-up numbers for a fictional pet brand. Same architecture, different thresholds and worker names. Hit "Run tonight's pipeline" and watch it work, including the campaigns it decides not to touch.</p>
+        <p style="margin-top:1rem"><a href="mcc-demo.html" class="demo-link">Open the demo <i class="fas fa-arrow-right"></i></a></p>
+      </div>
+    </div>
+
+  </div>
+
+  <section class="section" style="max-width:var(--max-w);margin:0 auto;padding:2rem 2.5rem">
+    <a href="project-growth-pipeline.html" class="next-proj btn-magnetic reveal">
+      <div><div class="next-proj-label">Next Project</div><div class="next-proj-name">Creative-to-Page Alignment Pipeline</div></div>
+      <div class="next-proj-arrow"><i class="fas fa-arrow-right"></i></div>
+    </a>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-brand">Emily Kuntze</span>
+      <nav class="footer-nav">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#hustles">Side Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="nav-right" style="gap:.75rem;position:static">
+        <a href="https://linkedin.com/in/emilykuntze" target="_blank" class="nav-social"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/Emilylk11" target="_blank" class="nav-social"><i class="fab fa-github"></i></a>
+        <a href="mailto:kuntzeemily@gmail.com" class="nav-social"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+  <script src="js/shared.js"></script><script src="js/casestudy.js"></script>
+</body>
+</html>
