@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="An autonomous pipeline that reads ad creative performance nightly and generates aligned landing pages — with confidence gates and human review on structural decisions.">
+  <meta property="og:title" content="Creative-to-Page Alignment Pipeline | Emily Kuntze">
+  <meta property="og:description" content="Closing the gap between ad creative that iterates daily and landing pages that iterate quarterly.">
+  <title>Creative-to-Page Pipeline | Emily Kuntze</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/main-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/shared.css"><link rel="stylesheet" href="css/casestudy.css">
+  <style>
+    .pipe{display:grid;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-top:1.25rem}
+    .pipe-row{background:var(--bg);padding:1.35rem 1.5rem;display:grid;grid-template-columns:auto 1fr;gap:1.25rem;align-items:start;transition:background .3s}
+    .pipe-row:hover{background:var(--bg-alt)}
+    .pipe-num{font-size:.7rem;font-weight:700;letter-spacing:.08em;color:var(--accent);background:var(--accent-light);border-radius:100px;padding:.3rem .7rem;white-space:nowrap}
+    .pipe-row h3{font-size:.98rem;font-weight:700;letter-spacing:-.01em;margin-bottom:.3rem}
+    .pipe-row p{font-size:.88rem;color:var(--text-2);line-height:1.75;margin:0}
+    .fork{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:1rem}
+    .fork-card{border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem 1.1rem;background:var(--bg)}
+    .fork-card.human{border-style:dashed;border-color:var(--text-3)}
+    .fork-tag{font-size:.62rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:.4rem}
+    .fork-card.human .fork-tag{color:var(--text-3)}
+    .fork-card p{font-size:.8rem;color:var(--text-2);line-height:1.65;margin:0}
+    .guard{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;margin-top:1.25rem}
+    .guard-item{display:flex;gap:.75rem;align-items:flex-start;border:1px solid var(--border);border-radius:var(--radius-sm);padding:1rem 1.1rem;background:var(--bg)}
+    .guard-item i{color:var(--accent);font-size:.95rem;margin-top:.2rem}
+    .guard-item strong{display:block;font-size:.88rem;margin-bottom:.15rem}
+    .guard-item span{font-size:.82rem;color:var(--text-2);line-height:1.65}
+    .pull{border-left:3px solid var(--accent);background:var(--bg-alt);padding:1.25rem 1.5rem;border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin:1.5rem 0}
+    .pull p{font-size:1rem;line-height:1.75;color:var(--text-1);margin:0;font-weight:500}
+    @media(max-width:768px){.fork,.guard{grid-template-columns:1fr}.pipe-row{grid-template-columns:1fr;gap:.6rem}}
+  </style>
+</head>
+<body>
+  <nav class="nav" id="mainNav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">EK</a>
+      <div class="nav-center" id="navLinks">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#hustles">Side Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://linkedin.com/in/emilykuntze" target="_blank" class="nav-social" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/Emilylk11" target="_blank" class="nav-social" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:kuntzeemily@gmail.com" class="nav-social" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+      <button class="nav-hamburger" id="menuToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu"><a href="index.html#work">Work</a><a href="index.html#services">Services</a><a href="index.html#hustles">Side Projects</a><a href="index.html#contact">Contact</a></div>
+
+  <section class="proj-hero">
+    <div class="proj-hero-inner">
+      <a href="index.html#work" class="back-link hero-enter hero-enter-d1"><i class="fas fa-arrow-left"></i> Back to projects</a>
+      <span class="proj-hero-eyebrow hero-enter hero-enter-d1">Case Study</span>
+      <h1 class="proj-hero-title hero-enter hero-enter-d2">Creative-to-Page<br>Alignment Pipeline</h1>
+      <p class="proj-hero-desc hero-enter hero-enter-d3">Ad creative changed every week. The landing pages didn't. I built a system that runs overnight and fixes that.</p>
+      <div class="proj-hero-meta hero-enter hero-enter-d4">
+        <div class="proj-meta-item"><div class="proj-meta-label">Client</div><div class="proj-meta-value">DTC Supplement Brand</div></div>
+        <div class="proj-meta-item"><div class="proj-meta-label">Role</div><div class="proj-meta-value">Architect &amp; Sole Builder</div></div>
+        <div class="proj-meta-item"><div class="proj-meta-label">Stack</div><div class="proj-meta-value">React · Express · Meta API · GA4</div></div>
+        <div class="proj-meta-item"><div class="proj-meta-label">Status</div><div class="proj-meta-value">In Production</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="case-body">
+
+    <div class="case-block reveal">
+      <span class="case-block-label">Problem</span>
+      <h2>Winning ads pointed at the wrong page</h2>
+      <p>A creative would start winning on one angle and send everyone to a page written for a different one. Fixing it meant doing the analysis by hand, so it happened rarely. Google and Microsoft also fold landing page relevance into Quality Score, so a mismatched page costs you on conversion rate and again on cost per click.</p>
+    </div>
+
+    <div class="case-block reveal">
+      <span class="case-block-label">What it does</span>
+      <h2>Five steps, every night</h2>
+      <div class="pipe">
+        <div class="pipe-row"><span class="pipe-num">01</span><div><h3>Consolidate</h3><p>Pulls ad performance, site analytics and order data into one place and makes them agree. I built this first, because the three systems had never matched.</p></div></div>
+        <div class="pipe-row"><span class="pipe-num">02</span><div><h3>Analyze</h3><p>Works out which creatives are winning and which <em>angle</em> is doing the work.</p></div></div>
+        <div class="pipe-row"><span class="pipe-num">03</span><div><h3>Decide</h3><p>Picks one of three options. There's no default branch, and stopping counts as a decision.</p>
+          <div class="fork">
+            <div class="fork-card"><span class="fork-tag">Inline test</span><p>Aligned variant on the existing page, run as an A/B test.</p></div>
+            <div class="fork-card"><span class="fork-tag">Full rebuild</span><p>A new landing page built off the brand system.</p></div>
+            <div class="fork-card human"><span class="fork-tag">Escalate</span><p>Not enough confidence, or it's a layout call I want to make.</p></div>
+          </div></div></div>
+        <div class="pipe-row"><span class="pipe-num">04</span><div><h3>Generate</h3><p>Builds the page against design tokens, known platform quirks, patterns that already tested well, and written voice rules.</p></div></div>
+        <div class="pipe-row"><span class="pipe-num">05</span><div><h3>Review</h3><p>Everything lands on a Kanban board for a person. Results feed the next run.</p></div></div>
+      </div>
+    </div>
+
+    <div class="case-block reveal">
+      <span class="case-block-label">Guardrails</span>
+      <h2>Why it's usable</h2>
+      <div class="guard">
+        <div class="guard-item"><i class="fas fa-shield-halved"></i><div><strong>Thresholds</strong><span>Won't touch a campaign below a spend floor or without enough days behind it.</span></div></div>
+        <div class="guard-item"><i class="fas fa-eye"></i><div><strong>Dry-run</strong><span>Every output can be inspected before it's real.</span></div></div>
+        <div class="guard-item"><i class="fas fa-clone"></i><div><strong>Dedupe</strong><span>Won't re-recommend what it already recommended.</span></div></div>
+        <div class="guard-item"><i class="fas fa-user-check"></i><div><strong>Copy yes, layout no</strong><span>Copy automates against voice rules. Structure doesn't. That's in the branching, not a prompt.</span></div></div>
+      </div>
+      <div class="pull" style="margin-top:1.5rem"><p>The one thing I didn't automate was media buying. Someone still has to be in the accounts. Everything after that decision, the system handles.</p></div>
+      <p style="font-size:.88rem;color:var(--text-3)">For context: FERMÀT has raised roughly $74M productizing this category for DTC brands, sold on revenue share. Mine works off creative performance rather than ad intent, and runs on infrastructure the brand owns.</p>
+    </div>
+
+    <!-- TODO EMILY: real numbers from GA4/VWO, or delete this whole block.
+         1. lift on aligned pages  2. creative win → page live  3. pages generated -->
+    <div class="case-block reveal">
+      <span class="case-block-label">Impact</span>
+      <h2>Results</h2>
+      <div class="results-grid">
+        <div class="result-card"><div class="result-stat"><span class="counter" data-target="0">0</span><span>%</span></div><p class="result-label">Lift on aligned pages</p></div>
+        <div class="result-card"><div class="result-stat"><span class="counter" data-target="0">0</span><span>h</span></div><p class="result-label">Creative win to page live</p></div>
+        <div class="result-card"><div class="result-stat"><span class="counter" data-target="0">0</span></div><p class="result-label">Pages generated</p></div>
+      </div>
+    </div>
+
+  </div>
+
+  <section class="section" style="max-width:var(--max-w);margin:0 auto;padding:2rem 2.5rem">
+    <a href="project-experimentation.html" class="next-proj btn-magnetic reveal">
+      <div><div class="next-proj-label">Next Project</div><div class="next-proj-name">Experimentation &amp; Revenue Attribution</div></div>
+      <div class="next-proj-arrow"><i class="fas fa-arrow-right"></i></div>
+    </a>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-brand">Emily Kuntze</span>
+      <nav class="footer-nav">
+        <a href="index.html#work">Work</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#hustles">Side Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+      <div class="nav-right" style="gap:.75rem;position:static">
+        <a href="https://linkedin.com/in/emilykuntze" target="_blank" class="nav-social"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/Emilylk11" target="_blank" class="nav-social"><i class="fab fa-github"></i></a>
+        <a href="mailto:kuntzeemily@gmail.com" class="nav-social"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </footer>
+  <script src="js/shared.js"></script><script src="js/casestudy.js"></script>
+</body>
+</html>
