@@ -1,61 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Creative to landing page pipeline">
-  <defs>
-    <linearGradient id="pg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#eff4ff"/><stop offset="1" stop-color="#dbeafe"/>
-    </linearGradient>
-    <pattern id="pdot" width="22" height="22" patternUnits="userSpaceOnUse">
-      <circle cx="1.6" cy="1.6" r="1.4" fill="#c5c9d1" opacity=".5"/>
-    </pattern>
-  </defs>
-  <rect width="800" height="500" fill="url(#pg)"/>
-  <rect width="800" height="500" fill="url(#pdot)"/>
-
-  <!-- flow line -->
-  <path d="M96 250 H704" stroke="#2563eb" stroke-width="2" stroke-dasharray="7 7" opacity=".45"/>
-
-  <!-- node 1: creative -->
-  <g>
-    <rect x="52" y="196" width="112" height="108" rx="16" fill="#fff" stroke="#2563eb" stroke-width="2"/>
-    <rect x="72" y="216" width="72" height="44" rx="6" fill="#dbeafe"/>
-    <rect x="72" y="268" width="52" height="7" rx="3.5" fill="#c7d7fb"/>
-    <rect x="72" y="281" width="36" height="7" rx="3.5" fill="#e2e8f5"/>
-  </g>
-  <text x="108" y="330" font-family="DM Sans,Segoe UI,sans-serif" font-size="14" font-weight="600" fill="#1a1a2e" text-anchor="middle">Ad creative</text>
-
-  <!-- node 2: analysis -->
-  <g>
-    <circle cx="300" cy="250" r="54" fill="#fff" stroke="#2563eb" stroke-width="2"/>
-    <rect x="276" y="262" width="10" height="18" rx="3" fill="#93b4f7"/>
-    <rect x="292" y="248" width="10" height="32" rx="3" fill="#4f83ef"/>
-    <rect x="308" y="234" width="10" height="46" rx="3" fill="#2563eb"/>
-    <path d="M272 228 L296 216 L322 224" stroke="#1d4ed8" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
-  <text x="300" y="330" font-family="DM Sans,Segoe UI,sans-serif" font-size="14" font-weight="600" fill="#1a1a2e" text-anchor="middle">Performance analysis</text>
-
-  <!-- node 3: fork -->
-  <g>
-    <rect x="446" y="150" width="108" height="40" rx="10" fill="#fff" stroke="#2563eb" stroke-width="1.6"/>
-    <rect x="462" y="166" width="52" height="8" rx="4" fill="#c7d7fb"/>
-    <rect x="446" y="230" width="108" height="40" rx="10" fill="#fff" stroke="#2563eb" stroke-width="1.6"/>
-    <rect x="462" y="246" width="66" height="8" rx="4" fill="#c7d7fb"/>
-    <rect x="446" y="310" width="108" height="40" rx="10" fill="#fff" stroke="#94a3b8" stroke-width="1.6" stroke-dasharray="5 4"/>
-    <rect x="462" y="326" width="44" height="8" rx="4" fill="#dfe4ec"/>
-    <path d="M354 250 C 400 250, 400 170, 446 170" stroke="#2563eb" stroke-width="2" fill="none" opacity=".6"/>
-    <path d="M354 250 H446" stroke="#2563eb" stroke-width="2" fill="none" opacity=".6"/>
-    <path d="M354 250 C 400 250, 400 330, 446 330" stroke="#94a3b8" stroke-width="2" fill="none" opacity=".6"/>
-  </g>
-  <text x="500" y="378" font-family="DM Sans,Segoe UI,sans-serif" font-size="14" font-weight="600" fill="#1a1a2e" text-anchor="middle">Decision fork</text>
-
-  <!-- node 4: page -->
-  <g>
-    <rect x="622" y="182" width="104" height="136" rx="14" fill="#fff" stroke="#2563eb" stroke-width="2"/>
-    <rect x="640" y="200" width="68" height="30" rx="5" fill="#2563eb" opacity=".85"/>
-    <rect x="640" y="240" width="68" height="7" rx="3.5" fill="#dbeafe"/>
-    <rect x="640" y="253" width="50" height="7" rx="3.5" fill="#e8eef8"/>
-    <rect x="640" y="272" width="44" height="18" rx="9" fill="#2563eb"/>
-  </g>
-  <text x="674" y="342" font-family="DM Sans,Segoe UI,sans-serif" font-size="14" font-weight="600" fill="#1a1a2e" text-anchor="middle">Aligned page</text>
-
-  <text x="400" y="66" font-family="DM Sans,Segoe UI,sans-serif" font-size="26" font-weight="700" fill="#1a1a2e" text-anchor="middle" letter-spacing="-0.5">Creative → Page Alignment</text>
-  <text x="400" y="94" font-family="DM Sans,Segoe UI,sans-serif" font-size="14" fill="#2563eb" text-anchor="middle" letter-spacing="1.4">RUNS NIGHTLY · HUMAN-GATED</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Creative to page alignment pipeline">
+<defs><linearGradient id="pg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#3b82f6"/><stop offset="1" stop-color="#1d4ed8"/></linearGradient></defs>
+<rect width="800" height="500" fill="url(#pg)"/>
+<g fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" opacity=".95">
+  <rect x="96" y="150" width="126" height="112" rx="12"/>
+  <rect x="118" y="172" width="82" height="46" rx="5" fill="#fff" opacity=".28" stroke="none"/>
+  <path d="M118 236 H182 M118 250 H160"/>
+  <path d="M222 206 H286" stroke-dasharray="10 9"/>
+  <circle cx="330" cy="206" r="44"/>
+  <path d="M312 222 V212 M330 222 V196 M348 222 V186"/>
+  <path d="M374 206 H438" stroke-dasharray="10 9"/>
+  <rect x="438" y="140" width="104" height="40" rx="9"/>
+  <rect x="438" y="186" width="104" height="40" rx="9"/>
+  <rect x="438" y="232" width="104" height="40" rx="9" stroke-dasharray="8 7" opacity=".62"/>
+  <path d="M578 150 V262" stroke-dasharray="10 9" opacity=".5"/>
+  <rect x="606" y="128" width="112" height="156" rx="12"/>
+  <rect x="628" y="150" width="68" height="34" rx="5" fill="#fff" opacity=".28" stroke="none"/>
+  <path d="M628 200 H696 M628 216 H674"/>
+  <rect x="628" y="236" width="54" height="24" rx="12" fill="#fff" stroke="none"/>
+</g>
+<text x="400" y="386" font-family="DM Sans,Segoe UI,Helvetica,sans-serif" font-size="46" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="4">CREATIVE → PAGE</text>
+<text x="400" y="426" font-family="DM Sans,Segoe UI,Helvetica,sans-serif" font-size="19" font-weight="500" fill="#fff" text-anchor="middle" letter-spacing="5.5" opacity=".82">ALIGNMENT PIPELINE</text>
 </svg>

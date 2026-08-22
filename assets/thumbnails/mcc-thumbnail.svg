@@ -1,59 +1,27 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="Marketing command center dashboard">
-  <defs>
-    <linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f2f6ff"/><stop offset="1" stop-color="#e3ecfd"/>
-    </linearGradient>
-    <pattern id="mdot" width="22" height="22" patternUnits="userSpaceOnUse">
-      <circle cx="1.6" cy="1.6" r="1.4" fill="#c5c9d1" opacity=".5"/>
-    </pattern>
-  </defs>
-  <rect width="800" height="500" fill="url(#mg)"/>
-  <rect width="800" height="500" fill="url(#mdot)"/>
-
-  <text x="400" y="60" font-family="DM Sans,Segoe UI,sans-serif" font-size="26" font-weight="700" fill="#1a1a2e" text-anchor="middle" letter-spacing="-0.5">Marketing Command Center</text>
-  <text x="400" y="88" font-family="DM Sans,Segoe UI,sans-serif" font-size="14" fill="#2563eb" text-anchor="middle" letter-spacing="1.4">MULTI-AGENT PIPELINE · KANBAN REVIEW</text>
-
-  <!-- browser chrome -->
-  <rect x="88" y="118" width="624" height="330" rx="16" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
-  <path d="M88 134 a16 16 0 0 1 16 -16 h592 a16 16 0 0 1 16 16 v20 H88 Z" fill="#f1f5f9"/>
-  <circle cx="112" cy="136" r="5" fill="#e2e8f0"/><circle cx="130" cy="136" r="5" fill="#e2e8f0"/><circle cx="148" cy="136" r="5" fill="#e2e8f0"/>
-
-  <!-- sidebar -->
-  <rect x="88" y="154" width="132" height="294" fill="#f8fafc"/>
-  <rect x="106" y="176" width="96" height="10" rx="5" fill="#2563eb"/>
-  <rect x="106" y="202" width="80" height="8" rx="4" fill="#dbe4f0"/>
-  <rect x="106" y="222" width="88" height="8" rx="4" fill="#dbe4f0"/>
-  <rect x="106" y="242" width="70" height="8" rx="4" fill="#dbe4f0"/>
-  <rect x="106" y="262" width="84" height="8" rx="4" fill="#dbe4f0"/>
-  <rect x="106" y="282" width="62" height="8" rx="4" fill="#dbe4f0"/>
-  <rect x="106" y="302" width="76" height="8" rx="4" fill="#dbe4f0"/>
-
-  <!-- KPI row -->
-  <rect x="240" y="174" width="136" height="60" rx="10" fill="#eff4ff" stroke="#dbeafe"/>
-  <rect x="256" y="190" width="40" height="7" rx="3.5" fill="#c7d7fb"/>
-  <rect x="256" y="205" width="66" height="14" rx="4" fill="#2563eb"/>
-  <rect x="392" y="174" width="136" height="60" rx="10" fill="#eff4ff" stroke="#dbeafe"/>
-  <rect x="408" y="190" width="52" height="7" rx="3.5" fill="#c7d7fb"/>
-  <rect x="408" y="205" width="54" height="14" rx="4" fill="#2563eb"/>
-  <rect x="544" y="174" width="146" height="60" rx="10" fill="#eff4ff" stroke="#dbeafe"/>
-  <rect x="560" y="190" width="44" height="7" rx="3.5" fill="#c7d7fb"/>
-  <rect x="560" y="205" width="72" height="14" rx="4" fill="#2563eb"/>
-
-  <!-- kanban -->
-  <rect x="240" y="252" width="140" height="176" rx="10" fill="#f8fafc" stroke="#e8edf4"/>
-  <rect x="256" y="268" width="58" height="8" rx="4" fill="#94a3b8"/>
-  <rect x="256" y="288" width="108" height="34" rx="7" fill="#fff" stroke="#e2e8f0"/>
-  <rect x="256" y="330" width="108" height="34" rx="7" fill="#fff" stroke="#e2e8f0"/>
-
-  <rect x="392" y="252" width="140" height="176" rx="10" fill="#f8fafc" stroke="#e8edf4"/>
-  <rect x="408" y="268" width="46" height="8" rx="4" fill="#94a3b8"/>
-  <rect x="408" y="288" width="108" height="34" rx="7" fill="#fff" stroke="#2563eb" stroke-width="1.6"/>
-  <rect x="408" y="330" width="108" height="34" rx="7" fill="#fff" stroke="#e2e8f0"/>
-  <rect x="408" y="372" width="108" height="34" rx="7" fill="#fff" stroke="#e2e8f0"/>
-
-  <rect x="544" y="252" width="146" height="176" rx="10" fill="#f8fafc" stroke="#e8edf4"/>
-  <rect x="560" y="268" width="66" height="8" rx="4" fill="#94a3b8"/>
-  <rect x="560" y="288" width="114" height="34" rx="7" fill="#eff6f1" stroke="#cfe6d8"/>
-  <circle cx="576" cy="305" r="6" fill="#3f9d6d"/>
-  <rect x="560" y="330" width="114" height="34" rx="7" fill="#fff" stroke="#e2e8f0"/>
+<defs><linearGradient id="mg" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#1e3a8a"/><stop offset="1" stop-color="#312e81"/></linearGradient></defs>
+<rect width="800" height="500" fill="url(#mg)"/>
+<g fill="none" stroke="#fff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round">
+  <rect x="118" y="80" width="564" height="264" rx="14"/>
+  <path d="M118 118 H682"/>
+  <circle cx="146" cy="99" r="5" fill="#fff" stroke="none" opacity=".7"/>
+  <circle cx="166" cy="99" r="5" fill="#fff" stroke="none" opacity=".7"/>
+  <circle cx="186" cy="99" r="5" fill="#fff" stroke="none" opacity=".7"/>
+  <path d="M232 118 V344" opacity=".55"/>
+  <g opacity=".72"><path d="M152 148 H212 M152 172 H198 M152 196 H208 M152 220 H190"/></g>
+  <rect x="260" y="144" width="122" height="52" rx="9"/>
+  <rect x="398" y="144" width="122" height="52" rx="9"/>
+  <rect x="536" y="144" width="122" height="52" rx="9" fill="#fff" opacity=".22" stroke="none"/>
+  <rect x="536" y="144" width="122" height="52" rx="9"/>
+  <rect x="260" y="220" width="122" height="104" rx="9"/>
+  <rect x="278" y="240" width="86" height="26" rx="5" fill="#fff" opacity=".28" stroke="none"/>
+  <rect x="278" y="278" width="86" height="26" rx="5" fill="#fff" opacity=".28" stroke="none"/>
+  <rect x="398" y="220" width="122" height="104" rx="9"/>
+  <rect x="416" y="240" width="86" height="26" rx="5" fill="#fff" stroke="none"/>
+  <rect x="536" y="220" width="122" height="104" rx="9"/>
+  <rect x="554" y="240" width="86" height="26" rx="5" fill="#fff" opacity=".28" stroke="none"/>
+</g>
+<text x="400" y="418" font-family="DM Sans,Segoe UI,Helvetica,sans-serif" font-size="42" font-weight="700" fill="#fff" text-anchor="middle" letter-spacing="3.5">COMMAND CENTER</text>
+<text x="400" y="454" font-family="DM Sans,Segoe UI,Helvetica,sans-serif" font-size="18" font-weight="500" fill="#fff" text-anchor="middle" letter-spacing="5.5" opacity=".82">MULTI-AGENT PIPELINE</text>
 </svg>
